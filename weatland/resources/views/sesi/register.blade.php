@@ -29,7 +29,7 @@
                 <input type="password" name="password" class="form-control">
             </div>
             <div class="mb-3 d-grid">
-                <button name="submit" class="btn btn-primary">Register</button>
+                <button name="submit" class="btn" style="background-color: #655DBB; color: #ECF2FF">Register</button>
             </div>
         </form>
     </div>

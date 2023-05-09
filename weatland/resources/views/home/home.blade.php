@@ -1,13 +1,106 @@
-@extends('komponen/menu')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-@section('konten')
-    @if (session()->has('success'))
-        <div class="alert alert-success" role="alert">
-            {{ session('success') }}
+</head>
+<body style="background-color: #ECF2FF">
+  <nav class="navbar navbar-dark fixed-top" style="background-color: #3E54AC">
+    <div class="container-fluid">
+      <div>
+        <a class="navbar-brand" href="#">Wetland</a>
+        
+      </div>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h4 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Selamat Datang, {{ Auth::user()->name }}</h4>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-    @endif
-    <div class="w-50 center border rounded px-3 py-3 mx-auto">
-        <h1>Home</h1>
-
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link" href="/home"><h5>Home</h5></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('menu.flora')}}"><h5>Flora</h5></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('menu.fauna')}}"><h5>Fauna</h5></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('menu.budaya')}}"><h5>Budaya</h5></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('menu.quis')}}"><h5>Quis</h5></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('logout')}}"><h5>Logout</h5></a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-@endsection
+  </nav>
+
+    <div class="container text-center mb-3" style="margin-top: 70px">
+        <div class="">
+            <div class="">
+                <h1>Selamat Datang, {{ Auth::user()->name }}</h1>
+                <br>
+                <h3>Mari Mengenal Pulau Kalimantan</h3>
+            </div>
+            
+            </div>
+        </div>
+
+        <div class="container-sm">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col m-3 rounded-5" style="background-color: #655DBB">
+                <a href="{{route('menu.flora')}}"><img style="width: 200px" src="{{URL('img/flora.png')}}"></a>
+                <h5 style="color: #ECF2FF">FLORA</h5>
+              </div>
+              <div class="col m-3 rounded-5" style="background-color: #655DBB">
+                <a href="{{route('menu.fauna')}}"><img style="width: 200px" src="{{URL('img/fauna.png')}}"></a>
+                <h5 style="color: #ECF2FF">FAUNA</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col m-3 rounded-5" style="background-color: #655DBB">
+                <a href="{{route('menu.budaya')}}"><img style="width: 200px" src="{{URL('img/budaya.png')}}"></a>
+                <h5 style="color: #ECF2FF">BUDAYA</h5>
+              </div>
+              <div class="col m-3 rounded-5" style="background-color: #655DBB;">
+                <a href="{{route('menu.quis')}}"><img style="height: 200px" src="{{URL('img/quis.png')}}"></a>
+                <h5 style="color: #ECF2FF">QUIZ </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+    
+    
+        <div class="container">
+          <footer class="py-3 my-4">
+              <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                  <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary">Home</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+              </ul>
+              <p class="text-center text-body-secondary">&copy; 2023 Weatland, Inc</p>
+          </footer>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>

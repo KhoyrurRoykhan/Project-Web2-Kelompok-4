@@ -33,8 +33,8 @@
             </div><br>
 
             <div class="mb-3 d-grid">
-                <button name="submit" class="btn btn-primary">Login</button><br>
-                <a class="btn btn-primary" href="sesi/register">Tidak Punya Akun? Silahkan Registrasi Disini</a>
+                <button name="submit" class="btn" style="background-color: #655DBB; color: #ECF2FF">Login</button><br>
+                <a class="btn" style="background-color: #655DBB; color: #ECF2FF" href="sesi/register">Tidak Punya Akun? Silahkan Registrasi Disini</a>
             </div>
         </form>
     </div>

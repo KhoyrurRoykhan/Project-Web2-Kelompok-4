@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Weatland</title>
+    <title>Wetland</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
@@ -26,14 +26,14 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <div>
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom" style="background-color: #3E54AC">
             <a href="/"
                 class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                 <svg class="bi me-2" width="40" height="32">
                     <use xlink:href="#bootstrap" />
                 </svg>
-                <span class="fs-4">Weatland<img src="{{ asset('storage/images/kucing.png') }}" style="width: 60px;"
+                <span class="fs-4">Wetland<img src="{{ asset('storage/images/kucing.png') }}" style="width: 60px;"
                         width="60px"></span>
             </a>
 
