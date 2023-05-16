@@ -54,7 +54,22 @@
             <br>
             <h3>MENU FAUNA</h3>
         </div>
-        
+        <div class="container-sm mt-5">
+          <div class="container text-center">
+              <div class="row">
+                  <div class="col m-3 rounded-5" style="background-color: #655DBB">
+                      <a href="{{ route('fauna.faunakalimantan') }}"><img style="width: 200px" height="200px"
+                              src="{{ URL('img/faunalist.png') }}"></a>
+                      <h5 style="color: #ECF2FF">FAUNA KALIMANTAN</h5>
+                  </div>
+                  <div class="col m-3 rounded-5" style="background-color: #655DBB">
+                      <a href="{{ route('fauna.faunavoice') }}"><img style="width: 200px" height="200px"
+                              src="{{ URL('img/voiceanimal.png') }}"></a>
+                      <h5 style="color: #ECF2FF">SUARA FAUNA</h5>
+                  </div>
+              </div>
+          </div>
+      </div>
         </div>
     </div>
 

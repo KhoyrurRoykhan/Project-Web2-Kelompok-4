@@ -1,18 +1,21 @@
 <?php
 
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\BendaController;
+use App\Http\Controllers\FaunaVoiceController;
+use App\Models\Article;
 use App\Http\Controllers\Home;
+use App\Models\FaunaVoice;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuisController;
+use App\Http\Controllers\TariController;
+use App\Http\Controllers\BendaController;
 use App\Http\Controllers\FaunaController;
 use App\Http\Controllers\FloraController;
 use App\Http\Controllers\BudayaController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PakaianController;
-use App\Http\Controllers\RumahAdatController;
 use App\Http\Controllers\SessionController;
-use App\Http\Controllers\TariController;
-use App\Models\Article;
+use App\Http\Controllers\RumahAdatController;
+use App\Http\Controllers\FaunaKalimantanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,8 +51,6 @@ Route::post('/budaya/rumahadat', [ArticleController::class, 'store'])->name('art
 Route::delete('/budaya/rumahadat/{id}', [ArticleController::class, 'destroy'])->name('artikel.destroy');
 Route::put('/article/{id}', [ArticleController::class, 'update'])->name('artikel.update');
 
-
-
 // Pakaian
 Route::get('/budaya/pakaian', [PakaianController::class, 'index'])->name('budaya.pakaian');
 Route::post('/budaya/pakaian', [PakaianController::class, 'store'])->name('pakaian.store');
@@ -67,6 +68,20 @@ Route::get('/budaya/benda', [BendaController::class, 'index'])->name('budaya.ben
 Route::post('/budaya/benda', [BendaController::class, 'store'])->name('benda.store');
 Route::delete('/budaya/benda/{id}', [BendaController::class, 'destroy'])->name('benda.destroy');
 Route::put('/benda/{id}', [BendaController::class, 'update'])->name('benda.update');
+
+
+//Fauna
+Route::get('/fauna/faunakalimantan', [FaunaKalimantanController::class, 'index'])->name('fauna.faunakalimantan');
+Route::post('/fauna/faunakalimantan', [FaunaKalimantanController::class, 'store'])->name('fauna.store');
+Route::delete('/fauna/faunakalimantan/{id}', [FaunaKalimantanController::class, 'destroy'])->name('fauna.destroy');
+Route::put('/faunakalimantan/{id}', [FaunaKalimantanController::class, 'update'])->name('fauna.update');
+
+//Fauna Voice
+Route::get('/fauna/faunavoice', [FaunaVoiceController::class, 'index'])->name('fauna.faunavoice');
+Route::post('/fauna/faunavoice', [FaunaVoiceController::class, 'store'])->name('faunavoice.store');
+Route::delete('/fauna/faunavoice/{id}', [FaunaVoiceController::class, 'destroy'])->name('fauna.destroy');
+Route::put('/faunavoice/{id}', [FaunaVoiceController::class, 'update'])->name('faunavoice.update');
+
 
 
 Route::get('layout/quis', [QuisController::class, 'index'])->name('menu.quis');
