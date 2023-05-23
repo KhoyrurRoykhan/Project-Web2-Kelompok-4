@@ -16,7 +16,8 @@
             @foreach ($items as $item)
                 <div class="col-md-4">
                     <div class="card border-0 mb-3">
-                        <center><img src="{{ url('storage/' . $item->image) }}" alt="" class="" height="200px" width="200px"></center>
+                        <center><img src="{{ url('storage/' . $item->image) }}" alt="" class="" height="200px">
+                        </center>
                         <div class="card-body">
                             <h5 class="card-title">{{ $item->title }}</h5>
                             <p class="mb-0 text-secondary">{{ $item->description }}</p>

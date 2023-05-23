@@ -58,4 +58,10 @@ class PakaianController extends Controller
         session()->flash('success', 'Artikel berhasil diupdate.');
         return redirect()->back();
     }
+    public function readmore($id)
+    {
+        $item = Pakaian::find($id); // Retrieve the item based on the given ID
+
+        return view('budaya.readmore', compact('item'));
+    }
 }

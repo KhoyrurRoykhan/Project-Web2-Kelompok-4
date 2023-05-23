@@ -16,12 +16,14 @@
             @foreach ($items as $item)
                 <div class="col-md-4">
                     <div class="card border-0 mb-3">
-                        <img src="{{ url('storage/' . $item->image) }}" alt="" class="card-img-top">
+                        <img src="{{ url('storage/' . $item->image) }}" wdiht="100px" height="250px"alt=""
+                            class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">{{ $item->title }}</h5>
-                            <p class="mb-0 text-secondary">{{ $item->description }}</p>
+                            <p class="mb-0 text-secondary">{{ substr($item->description, 0, 30) }}.....</p>
 
-                            <button type="button" class="btn btn-success">Read More</button>
+                            <a href="{{ route('readmore.benda', ['id' => $item->id]) }}" class="btn btn-success">Read
+                                More</a>
                             <form action="{{ route('benda.destroy', $item->id) }}" method="POST" style="display: inline">
                                 @csrf
                                 @method('DELETE')
