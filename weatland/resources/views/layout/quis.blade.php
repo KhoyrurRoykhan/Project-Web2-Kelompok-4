@@ -54,7 +54,22 @@
             <br>
             <h3>MENU QUIS</h3>
         </div>
-        
+        <div class="container-sm mt-5">
+          <div class="container text-center">
+              <div class="row">
+                  <div class="col m-3 rounded-5" style="background-color: #655DBB">
+                      <a href="{{route('kuis.mulaikuis')}}"><img style="width: 200px" height="200px"
+                              src="{{ URL('img/mulai_kuis.png') }}"></a>
+                      <h4 style="color: #ECF2FF">Mulai Kuis</h4>
+                  </div>
+                  <div class="col m-3 rounded-5" style="background-color: #655DBB">
+                      <a href="#"><img style="width: 200px" height="200px"
+                              src="{{ URL('img/leaderboard.png') }}"></a>
+                      <h4 style="color: #ECF2FF">Leaderboard</h4>
+                  </div>
+              </div>
+          </div>
+      </div>
         </div>
     </div>
 

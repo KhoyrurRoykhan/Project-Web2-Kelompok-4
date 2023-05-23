@@ -41,7 +41,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">Edit Fauna</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                <button type="button" class="btn-close" data-bs-dismiss="mo dal"
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">

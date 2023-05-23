@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FaunaVoiceController;
+use App\Http\Controllers\MulaiKuisController;
 use App\Models\Article;
 use App\Http\Controllers\Home;
 use App\Models\FaunaVoice;
@@ -43,6 +44,7 @@ Route::post('/sesi/create', [SessionController::class, 'create']);
 Route::get('/layout/flora', [FloraController::class, 'index'])->name('menu.flora');
 Route::get('/layout/fauna', [FaunaController::class, 'index'])->name('menu.fauna');
 Route::get('/layout/budaya', [BudayaController::class, 'index'])->name('menu.budaya');
+Route::get('layout/quis', [QuisController::class, 'index'])->name('menu.quis');
 
 
 // Budaya
@@ -82,6 +84,10 @@ Route::post('/fauna/faunavoice', [FaunaVoiceController::class, 'store'])->name('
 Route::delete('/fauna/faunavoice/{id}', [FaunaVoiceController::class, 'destroy'])->name('fauna.destroy');
 Route::put('/faunavoice/{id}', [FaunaVoiceController::class, 'update'])->name('faunavoice.update');
 
+//Mulai Kuis
+Route::get('/kuis/mulaikuis', [MulaiKuisController::class, 'index'])->name('kuis.mulaikuis');
+Route::post('/kuis/mulaikuis', [MulaiKuisController::class, 'store'])->name('mulaikuis.store');
+
+Route::put('/mulaikuis/{id}', [MulaiKuisController::class, 'update'])->name('mulaikuis.update');
 
 
-Route::get('layout/quis', [QuisController::class, 'index'])->name('menu.quis');
