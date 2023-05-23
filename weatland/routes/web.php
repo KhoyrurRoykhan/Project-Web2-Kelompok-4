@@ -91,13 +91,8 @@ Route::put('/faunavoice/{id}', [FaunaVoiceController::class, 'update'])->name('f
 //Mulai Kuis
 Route::get('/kuis/mulaikuis', [MulaiKuisController::class, 'index'])->name('kuis.mulaikuis');
 Route::post('/kuis/mulaikuis', [MulaiKuisController::class, 'store'])->name('mulaikuis.store');
-
+Route::get('layout/quis', [QuisController::class, 'index'])->name('menu.quis');
 Route::put('/mulaikuis/{id}', [MulaiKuisController::class, 'update'])->name('mulaikuis.update');
 
 
-<<<<<<< HEAD
-=======
 
-
-Route::get('layout/quis', [QuisController::class, 'index'])->name('menu.quis');
->>>>>>> 4becbe68234ad5ab4872849d6caafa445b6e1a03
