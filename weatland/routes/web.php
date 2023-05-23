@@ -45,29 +45,33 @@ Route::get('/layout/fauna', [FaunaController::class, 'index'])->name('menu.fauna
 Route::get('/layout/budaya', [BudayaController::class, 'index'])->name('menu.budaya');
 
 
-// Budaya
+// Budaya - Rumah Adat
 Route::get('/budaya/rumahadat', [ArticleController::class, 'index'])->name('budaya.rumahadat');
 Route::post('/budaya/rumahadat', [ArticleController::class, 'store'])->name('artikel.store');
 Route::delete('/budaya/rumahadat/{id}', [ArticleController::class, 'destroy'])->name('artikel.destroy');
-Route::put('/article/{id}', [ArticleController::class, 'update'])->name('artikel.update');
+Route::put('/budaya/rumahadat/{id}', [ArticleController::class, 'update'])->name('artikel.update');
+Route::get('/readmore/artikel/{id}', [ArticleController::class, 'readmore'])->name('readmore.artikel');
 
-// Pakaian
+// Budaya - Pakaian
 Route::get('/budaya/pakaian', [PakaianController::class, 'index'])->name('budaya.pakaian');
 Route::post('/budaya/pakaian', [PakaianController::class, 'store'])->name('pakaian.store');
 Route::delete('/budaya/pakaian/{id}', [PakaianController::class, 'destroy'])->name('pakaian.destroy');
-Route::put('/pakaian/{id}', [PakaianController::class, 'update'])->name('pakaian.update');
+Route::put('/budaya/pakaian/{id}', [PakaianController::class, 'update'])->name('pakaian.update');
+Route::get('/readmore/pakaian/{id}', [PakaianController::class, 'readmore'])->name('readmore.pakaian');
 
-// Tari
-Route::get('/budaya/tari', [TariController::class, 'index'])->name('budaya.tari');
-Route::post('/budaya/tari', [TariController::class, 'store'])->name('tari.store');
-Route::delete('/budaya/tari/{id}', [TariController::class, 'destroy'])->name('tari.destroy');
+// Budaya - Tari
+Route::get('/tari', [TariController::class, 'index'])->name('budaya.tari');
+Route::post('/tari', [TariController::class, 'store'])->name('tari.store');
+Route::delete('/tari/{id}', [TariController::class, 'destroy'])->name('tari.destroy');
 Route::put('/tari/{id}', [TariController::class, 'update'])->name('tari.update');
+Route::get('/readmore/tari/{id}', [TariController::class, 'readmore'])->name('readmore.tari');
 
 // Benda
 Route::get('/budaya/benda', [BendaController::class, 'index'])->name('budaya.benda');
 Route::post('/budaya/benda', [BendaController::class, 'store'])->name('benda.store');
 Route::delete('/budaya/benda/{id}', [BendaController::class, 'destroy'])->name('benda.destroy');
 Route::put('/benda/{id}', [BendaController::class, 'update'])->name('benda.update');
+Route::get('/readmore/{id}', [BendaController::class, 'readmore'])->name('readmore.benda');
 
 
 //Fauna
@@ -81,6 +85,8 @@ Route::get('/fauna/faunavoice', [FaunaVoiceController::class, 'index'])->name('f
 Route::post('/fauna/faunavoice', [FaunaVoiceController::class, 'store'])->name('faunavoice.store');
 Route::delete('/fauna/faunavoice/{id}', [FaunaVoiceController::class, 'destroy'])->name('fauna.destroy');
 Route::put('/faunavoice/{id}', [FaunaVoiceController::class, 'update'])->name('faunavoice.update');
+
+
 
 
 

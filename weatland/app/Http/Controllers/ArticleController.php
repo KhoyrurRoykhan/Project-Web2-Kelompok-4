@@ -59,4 +59,15 @@ class ArticleController extends Controller
         session()->flash('success', 'Artikel berhasil diupdate.');
         return redirect()->back();
     }
+
+    // public function readmore()
+    // {
+    //     return view('budaya/readmore');
+    // }
+    public function readmore($id)
+    {
+        $item = Article::find($id); // Retrieve the item based on the given ID
+
+        return view('budaya.readmore', compact('item'));
+    }
 }
