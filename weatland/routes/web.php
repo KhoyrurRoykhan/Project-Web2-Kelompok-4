@@ -39,7 +39,7 @@ Route::post('/sesi/login', [SessionController::class, 'login']);
 Route::get('/sesi/logout', [SessionController::class, 'logout'])->name('logout');
 Route::get('/sesi/register', [SessionController::class, 'register']);
 Route::post('/sesi/create', [SessionController::class, 'create']);
-
+Route::get('/sesi', [SessionController::class, 'index'])->name('sesi.index');
 
 Route::get('/layout/flora', [FloraController::class, 'index'])->name('menu.flora');
 Route::get('/layout/fauna', [FaunaController::class, 'index'])->name('menu.fauna');
@@ -103,3 +103,6 @@ Route::get('/kuis/mulaikuis', [MulaiKuisController::class, 'index'])->name('kuis
 Route::post('/kuis/mulaikuis', [MulaiKuisController::class, 'store'])->name('mulaikuis.store');
 Route::get('layout/quis', [QuisController::class, 'index'])->name('menu.quis');
 Route::put('/mulaikuis/{id}', [MulaiKuisController::class, 'update'])->name('mulaikuis.update');
+
+
+// Landing Page
