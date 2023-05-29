@@ -88,11 +88,18 @@ Route::post('/fauna/faunavoice', [FaunaVoiceController::class, 'store'])->name('
 Route::delete('/fauna/faunavoice/{id}', [FaunaVoiceController::class, 'destroy'])->name('fauna.destroy');
 Route::put('/faunavoice/{id}', [FaunaVoiceController::class, 'update'])->name('faunavoice.update');
 
+
+// Flora
+Route::get('/flora/home', [FloraController::class, 'index'])->name('flora.home');
+Route::post('/flora/home', [FloraController::class, 'store'])->name('flora.store');
+Route::delete('/flora/home/{id}', [FloraController::class, 'destroy'])->name('flora.destroy');
+Route::put('/home/{id}', [FloraController::class, 'update'])->name('flora.update');
+Route::get('/readmore/{id}', [FloraController::class, 'readmore'])->name('readmore.flora');
+
+
+
 //Mulai Kuis
 Route::get('/kuis/mulaikuis', [MulaiKuisController::class, 'index'])->name('kuis.mulaikuis');
 Route::post('/kuis/mulaikuis', [MulaiKuisController::class, 'store'])->name('mulaikuis.store');
 Route::get('layout/quis', [QuisController::class, 'index'])->name('menu.quis');
 Route::put('/mulaikuis/{id}', [MulaiKuisController::class, 'update'])->name('mulaikuis.update');
-
-
-
