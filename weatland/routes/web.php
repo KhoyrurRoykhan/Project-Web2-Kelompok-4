@@ -73,7 +73,7 @@ Route::get('/budaya/benda', [BendaController::class, 'index'])->name('budaya.ben
 Route::post('/budaya/benda', [BendaController::class, 'store'])->name('benda.store');
 Route::delete('/budaya/benda/{id}', [BendaController::class, 'destroy'])->name('benda.destroy');
 Route::put('/benda/{id}', [BendaController::class, 'update'])->name('benda.update');
-Route::get('/readmore/{id}', [BendaController::class, 'readmore'])->name('readmore.benda');
+Route::get('/readmore/benda/{id}', [BendaController::class, 'readmore'])->name('readmore.benda');
 
 
 //Fauna

@@ -15,7 +15,7 @@
 
 @section('konten')
     <div class="container py-5">
-        <div class="card">
+        <div class="card shadow">
             <img src="{{ url('storage/' . $item->image) }}" alt="{{ $item->title }}" class="card-img-top">
             <div class="card-body">
                 <h3 class="card-title">{{ $item->title }}</h3>

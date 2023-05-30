@@ -15,7 +15,7 @@
         <div class="row">
             @foreach ($items as $item)
                 <div class="col-md-4">
-                    <div class="card border-0 mb-3">
+                    <div class="card border-0 mb-3 shadow">
                         <center><img src="{{ url('storage/' . $item->image) }}" alt="" class="" height="200px">
                         </center>
                         <div class="card-body">

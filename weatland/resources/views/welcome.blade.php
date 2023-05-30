@@ -31,15 +31,15 @@
 <body>
 
 
-    <header id="header" class="fixed-top">
+    <header id="header" class="fixed-top" style="background-color: #3E54AC">
         <div class="container d-flex align-items-center justify-content-between">
 
-            <h1 class="logo"><a href="index.html">Lahan Basah</a></h1>
+            <h1 class="logo"><a href="index.html" style="color: aliceblue">Lahan Basah</a></h1>
 
             <nav id="navbar" class="navbar">
                 <ul>
 
-                    <li><a href="{{ route('sesi.index') }}">Login</a></li>
+                    <li><a href="{{ route('sesi.index') }}" style="color: aliceblue">Login</a></li>
 
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
