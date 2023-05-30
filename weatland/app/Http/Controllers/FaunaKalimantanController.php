@@ -59,4 +59,11 @@ class FaunaKalimantanController extends Controller
         session()->flash('success', 'Artikel berhasil diupdate.');
         return redirect()->back();
     }
+
+    public function readmore($id)
+    {
+        $item = FaunaKalimantan::find($id); // Retrieve the item based on the given ID
+
+        return view('fauna.readmore', compact('item'));
+    }
 }

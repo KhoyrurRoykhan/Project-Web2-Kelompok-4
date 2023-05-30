@@ -12,10 +12,10 @@
 </head>
 
 <body style="background-color: #ECF2FF">
-    <nav class="navbar navbar-dark fixed-top" style="background-color: #3E54AC">
+    <nav class="navbar navbar-dark fixed-top shadow" style="background-color: #3E54AC">
         <div class="container-fluid">
             <div>
-                <a class="navbar-brand" href="#">Wetland</a>
+                <a class="navbar-brand" href="#"><b>Wetland</b></a>
 
             </div>
 
@@ -72,42 +72,63 @@
     <div class="container text-center mb-3" style="margin-top: 70px">
         <div class="">
             <div class="">
-                <h1>Selamat Datang, {{ Auth::user()->name }}</h1>
+                <h3>Selamat Datang, {{ Auth::user()->name }}</h3>
                 <br>
-                <h3>Mari Mengenal Pulau Kalimantan</h3>
+                <h4>"Selamat datang di halaman utama kami, di mana Anda dapat menjelajahi kekayaan flora, fauna, dan budaya yang memukau di Pulau Kalimantan!"</h4>
             </div>
 
         </div>
     </div>
 
-    <div class="container-sm">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col m-3 rounded-5" style="background-color: #655DBB">
-                    <a href="{{ route('menu.flora') }}"><img style="width: 200px" src="{{ URL('img/flora.png') }}"></a>
-                    <h5 style="color: #ECF2FF">FLORA</h5>
-                </div>
-                <div class="col m-3 rounded-5" style="background-color: #655DBB">
-                    <a href="{{ route('menu.fauna') }}"><img style="width: 200px" src="{{ URL('img/fauna.png') }}"></a>
-                    <h5 style="color: #ECF2FF">FAUNA</h5>
-                </div>
+    <div class="container">
+        <center><div class="row m-4">
+            <div class="col m-4">
+                <div class="card shadow" style="width: 30rem;">
+                    <center><img src="{{ URL('img/flora.png') }}" class="card-img-top" alt="..." style="width: 200px"></center>
+                    <div class="card-body">
+                      <h5 class="card-title">FLORA</h5>
+                      <p class="card-text">Ayo jelajahi Flora yang berada di pulau Kalimantan</p>
+                      <a href="{{ route('menu.flora') }}" class="btn btn-primary" style="background-color: #655DBB">Jelajahi</a>
+                    </div>
+                  </div>
             </div>
-            <div class="row">
-                <div class="col m-3 rounded-5" style="background-color: #655DBB">
-                    <a href="{{ route('menu.budaya') }}"><img style="width: 200px"
-                            src="{{ URL('img/budaya.png') }}"></a>
-                    <h5 style="color: #ECF2FF">BUDAYA</h5>
-                </div>
-                <div class="col m-3 rounded-5" style="background-color: #655DBB;">
-                    <a href="{{ route('menu.quis') }}"><img style="height: 200px" src="{{ URL('img/quis.png') }}"></a>
-                    <h5 style="color: #ECF2FF">QUIZ </h5>
-                </div>
+
+            <div class="col m-4">
+                <div class="card shadow" style="width: 30rem;">
+                    <center><img src="{{ URL('img/fauna.png') }}" class="card-img-top" alt="..." style="width: 200px"></center>
+                    <div class="card-body">
+                      <h5 class="card-title">FAUNA</h5>
+                      <p class="card-text">Ayo jelajahi Fauna yang berada di pulau Kalimantan</p>
+                      <a href="{{ route('menu.fauna') }}" class="btn btn-primary" style="background-color: #655DBB">Jelajahi</a>
+                    </div>
+                  </div>
             </div>
-        </div>
+        </div></center>
+
+        <center><div class="row m-4">
+            <div class="col m-4">
+                <div class="card shadow" style="width: 30rem;">
+                    <center><img src="{{ URL('img/budaya.png') }}" class="card-img-top" alt="..." style="width: 200px"></center>
+                    <div class="card-body">
+                      <h5 class="card-title">BUDAYA</h5>
+                      <p class="card-text">Ayo jelajahi Budaya yang berada di pulau Kalimantan</p>
+                      <a href="{{ route('menu.budaya') }}" class="btn btn-primary" style="background-color: #655DBB">Jelajahi</a>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col m-4">
+                <div class="card shadow" style="width: 30rem;">
+                    <center><img src="{{ URL('img/quis.png') }}" class="card-img-top" alt="..." style="width: 250px; height: 200px"></center>
+                    <div class="card-body">
+                      <h5 class="card-title">KUIS</h5>
+                      <p class="card-text">Ayo uji pengetahuanmu</p>
+                      <a href="{{ route('menu.quis') }}" class="btn btn-primary" style="background-color: #655DBB">Uji Pengetahuan</a>
+                    </div>
+                  </div>
+            </div>
+        </div></center>
     </div>
-
-
-
 
     <div class="container">
         <footer class="py-3 my-4">

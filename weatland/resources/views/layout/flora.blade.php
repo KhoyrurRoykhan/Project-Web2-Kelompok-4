@@ -11,8 +11,8 @@
 <body style="background-color: #ECF2FF">
     <nav class="navbar navbar-dark fixed-top" style="background-color: #3E54AC">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Wetland</a>
-        <a class="navbar-brand" href="#">FLORA</a>
+        <a class="navbar-brand" href="#"><b>Wetland</b></a>
+        <a class="navbar-brand" href="#"><b>FLORA</b></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,15 +50,26 @@
   <div class="container text-center mb-3" style="margin-top: 70px">
     <div class="">
         <div class="">
-            <h1>Selamat Datang, {{ Auth::user()->name }}</h1>
+            <h3>Hallo {{ Auth::user()->name }}, Selamat datang di Menu Flora</h3>
             <br>
-            <h3>MENU FLORA</h3>
+            <h4>Ayo Jelajahi Kecantikan Flora Kalimantan: Keajaiban Tanaman yang Menghiasi Pulau Kami!</h4>
         </div>
         
         </div>
     </div>
 
-      
+    <div class="container">
+      <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+              <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary">Home</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+          </ul>
+          <p class="text-center text-body-secondary">&copy; 2023 Weatland, Inc</p>
+      </footer>
+  </div>
         
     
     

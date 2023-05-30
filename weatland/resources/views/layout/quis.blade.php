@@ -11,8 +11,8 @@
 <body style="background-color: #ECF2FF">
     <nav class="navbar navbar-dark fixed-top" style="background-color: #3E54AC">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Wetland</a>
-        <a class="navbar-brand" href="#">QUIS</a>
+        <a class="navbar-brand" href="#"><b>Wetland</b></a>
+        <a class="navbar-brand" href="#"><b>QUIS</b></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,28 +50,51 @@
   <div class="container text-center mb-3" style="margin-top: 70px">
     <div class="">
         <div class="">
-            <h1>Selamat Datang, {{ Auth::user()->name }}</h1>
-            <br>
-            <h3>MENU QUIS</h3>
+          <h3>Hallo {{ Auth::user()->name }}, Selamat datang di Menu Kuis</h3>
+          <br>
+          <h4>Uji Pengetahuan Anda dengan Kuis Seru: Tes Seberapa Jauh Anda Mengenal Flora, Fauna, dan Budaya Kalimantan!</h4>
+            </div>
         </div>
         <div class="container-sm mt-5">
-          <div class="container text-center">
-              <div class="row">
-                  <div class="col m-3 rounded-5" style="background-color: #655DBB">
-                      <a href="{{route('kuis.mulaikuis')}}"><img style="width: 200px" height="200px"
-                              src="{{ URL('img/mulai_kuis.png') }}"></a>
-                      <h4 style="color: #ECF2FF">Mulai Kuis</h4>
+          
+          <center><div class="row m-4">
+            <div class="col m-4">
+                <div class="card shadow" style="width: 30rem;">
+                    <center><img src="{{ URL('img/mulai_kuis.png') }}" class="card-img-top" alt="..." style="width: 200px; height: 200px;"></center>
+                    <div class="card-body">
+                      <h5 class="card-title">KUIS</h5>
+                      <p class="card-text">Ayo tunjukan kemampuanmu!</p>
+                      <a href="{{route('kuis.mulaikuis')}}" class="btn btn-primary" style="background-color: #655DBB">Mulai Kuis</a>
+                    </div>
                   </div>
-                  <div class="col m-3 rounded-5" style="background-color: #655DBB">
-                      <a href="#"><img style="width: 200px" height="200px"
-                              src="{{ URL('img/leaderboard.png') }}"></a>
-                      <h4 style="color: #ECF2FF">Leaderboard</h4>
+            </div>
+
+            <div class="col m-4">
+                <div class="card shadow" style="width: 30rem;">
+                    <center><img src="{{ URL('img/leaderboard.png') }}" class="card-img-top" alt="..." style="width: 200px; height: 200px;"></center>
+                    <div class="card-body">
+                      <h5 class="card-title">LEADERBOARD</h5>
+                      <p class="card-text">Ayo lihat ranking anda</p>
+                      <a href="#" class="btn btn-primary" style="background-color: #655DBB">Lihat Leaderboard</a>
+                    </div>
                   </div>
-              </div>
-          </div>
+            </div>
+        </div></center>
       </div>
         </div>
     </div>
+    <div class="container">
+      <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+              <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary">Home</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+          </ul>
+          <p class="text-center text-body-secondary">&copy; 2023 Weatland, Inc</p>
+      </footer>
+  </div>
 
       
         

@@ -14,8 +14,8 @@
 <body style="background-color: #ECF2FF">
     <nav class="navbar navbar-dark fixed-top" style="background-color: #3E54AC">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Wetland</a>
-            <a class="navbar-brand" href="#">BUDAYA</a>
+            <a class="navbar-brand" href="#"><b>Wetland</b></a>
+            <a class="navbar-brand" href="#"><b>BUDAYA</b></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -69,39 +69,61 @@
     <div class="container text-center mb-3" style="margin-top: 70px">
         <div class="">
             <div class="">
-                <h1>Selamat Datang, {{ Auth::user()->name }}</h1>
-                <br>
-                <h3>MENU BUDAYA</h3>
+                <h3>Hallo {{ Auth::user()->name }}, Selamat datang di Menu Budaya</h3>
+          <br>
+          <h4>Terpesonalah oleh Kearifan Budaya Kalimantan: Menelusuri Warisan Kebudayaan yang Menginspirasi di Pulau Kami!</h4>
             </div>
             <div class="container-sm">
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col m-3 rounded-5" style="background-color: #655DBB">
-                            <a href="{{ route('budaya.rumahadat') }}"><img style="width: 200px" height="200px"
-                                    src="{{ URL('img/rumahadat.png') }}"></a>
-                            <h5 style="color: #ECF2FF">RUMAH ADAT</h5>
+
+                <div class="container">
+                    <center><div class="row m-4">
+                        <div class="col m-4">
+                            <div class="card shadow" style="width: 30rem;">
+                                <center><img src="{{ URL('img/rumahadat.png') }}" class="card-img-top" alt="..." style="width: 300px; height: 200px"></center>
+                                <div class="card-body">
+                                  <h5 class="card-title">RUMAH ADAT</h5>
+                                  <p class="card-text">Ayo jelajahi Rumah Adat yang berada di pulau Kalimantan</p>
+                                  <a href="{{ route('budaya.rumahadat') }}" class="btn btn-primary" style="background-color: #655DBB">Jelajahi</a>
+                                </div>
+                              </div>
                         </div>
-                        <div class="col m-3 rounded-5" style="background-color: #655DBB">
-                            <a href="{{ route('budaya.pakaian') }}"><img style="width: 200px" height="200px"
-                                    src="{{ URL('img/pakaian.png') }}"></a>
-                            <h5 style="color: #ECF2FF">PAKAIAN</h5>
+            
+                        <div class="col m-4">
+                            <div class="card shadow" style="width: 30rem;">
+                                <center><img src="{{ URL('img/pakaian.png') }}" class="card-img-top" alt="..." style="width: 200px; height: 200px"></center>
+                                <div class="card-body">
+                                  <h5 class="card-title">PAKAIAN</h5>
+                                  <p class="card-text">Ayo jelajahi Pakaian Adat yang berada di pulau Kalimantan</p>
+                                  <a href="{{ route('budaya.pakaian') }}" class="btn btn-primary" style="background-color: #655DBB">Jelajahi</a>
+                                </div>
+                              </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col m-3 rounded-5" style="background-color: #655DBB">
-                            <a href="{{ route('budaya.tari') }}"><img style="width: 200px"
-                                    src="{{ URL('img/tari.png') }}"></a>
-                            <h5 style="color: #ECF2FF">TARI</h5>
+                    </div></center>
+            
+                    <center><div class="row m-4">
+                        <div class="col m-4">
+                            <div class="card shadow" style="width: 30rem;">
+                                <center><img src="{{ URL('img/tari.png') }}" class="card-img-top" alt="..." style="width: 200px; height: 200px"></center>
+                                <div class="card-body">
+                                  <h5 class="card-title">TARI</h5>
+                                  <p class="card-text">Ayo jelajahi Tari Tradisional yang berada di pulau Kalimantan</p>
+                                  <a href="{{ route('budaya.tari') }}" class="btn btn-primary" style="background-color: #655DBB">Jelajahi</a>
+                                </div>
+                              </div>
                         </div>
-                        <div class="col m-3 rounded-5" style="background-color: #655DBB;">
-                            <a href="{{ route('budaya.benda') }}"><img style="height: 200px"
-                                    src="{{ URL('img/benda.png') }}"></a>
-                            <h5 style="color: #ECF2FF">BENDA </h5>
+            
+                        <div class="col m-4">
+                            <div class="card shadow" style="width: 30rem;">
+                                <center><img src="{{ URL('img/benda.png') }}" class="card-img-top" alt="..." style="width: 200px; height: 200px"></center>
+                                <div class="card-body">
+                                  <h5 class="card-title">BENDA</h5>
+                                  <p class="card-text">Ayo jelajahi Benda Tradisional yang berada di pulau Kalimantan</p>
+                                  <a href="{{ route('budaya.benda') }}" class="btn btn-primary" style="background-color: #655DBB">Jelajahi</a>
+                                </div>
+                              </div>
                         </div>
-                    </div>
+                    </div></center>
                 </div>
-            </div>
-        </div>
 
     </div>
     </div>

@@ -11,8 +11,8 @@
 <body style="background-color: #ECF2FF">
     <nav class="navbar navbar-dark fixed-top" style="background-color: #3E54AC">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Wetland</a>
-        <a class="navbar-brand" href="#">FAUNA</a>
+        <a class="navbar-brand" href="#"><b>Wetland</b></a>
+        <a class="navbar-brand" href="#"><b>FAUNA</b></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,31 +50,50 @@
   <div class="container text-center mb-3" style="margin-top: 70px">
     <div class="">
         <div class="">
-            <h1>Selamat Datang, {{ Auth::user()->name }}</h1>
-            <br>
-            <h3>MENU FAUNA</h3>
+          <h3>Hallo {{ Auth::user()->name }}, Selamat datang di Menu Fauna</h3>
+          <br>
+          <h4>Ayo Temukan Keunikan Fauna Kalimantan: Pesona Satwa yang Mendiami Pulau Kami!</h4>
         </div>
-        <div class="container-sm mt-5">
-          <div class="container text-center">
-              <div class="row">
-                  <div class="col m-3 rounded-5" style="background-color: #655DBB">
-                      <a href="{{ route('fauna.faunakalimantan') }}"><img style="width: 200px" height="200px"
-                              src="{{ URL('img/faunalist.png') }}"></a>
-                      <h5 style="color: #ECF2FF">FAUNA KALIMANTAN</h5>
-                  </div>
-                  <div class="col m-3 rounded-5" style="background-color: #655DBB">
-                      <a href="{{ route('fauna.faunavoice') }}"><img style="width: 200px" height="200px"
-                              src="{{ URL('img/voiceanimal.png') }}"></a>
-                      <h5 style="color: #ECF2FF">SUARA FAUNA</h5>
-                  </div>
+
+        <div class="container">
+          <center><div class="row m-4">
+              <div class="col m-4">
+                  <div class="card shadow" style="width: 30rem;">
+                      <center><img src="{{ URL('img/faunalist.png') }}" class="card-img-top" alt="..." style="width: 200px; height: 200px;"></center>
+                      <div class="card-body">
+                        <h5 class="card-title">FAUNA KALIMANTAN</h5>
+                        <p class="card-text">Mari mengenal fauna Kalimantan</p>
+                        <a href="{{ route('fauna.faunakalimantan') }}" class="btn btn-primary" style="background-color: #655DBB">Let's Go</a>
+                      </div>
+                    </div>
               </div>
-          </div>
-      </div>
-        </div>
-    </div>
+  
+              <div class="col m-4">
+                  <div class="card shadow" style="width: 30rem;">
+                      <center><img src="{{ URL('img/voiceanimal.png') }}" class="card-img-top" alt="..." style="width: 200px; height: 200px;"></center>
+                      <div class="card-body">
+                        <h5 class="card-title">SUARA FAUNA</h5>
+                        <p class="card-text">Mari mengenal suara fauna Kalimantan</p>
+                        <a href="{{ route('fauna.faunavoice') }}" class="btn btn-primary" style="background-color: #655DBB">Let's Go</a>
+                      </div>
+                    </div>
+              </div>
+          </div></center>
+
 
       
-        
+    <div class="container">
+      <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+              <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary">Home</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+          </ul>
+          <p class="text-center text-body-secondary">&copy; 2023 Weatland, Inc</p>
+      </footer>
+  </div>
     
     
 
