@@ -39,7 +39,7 @@ Route::post('/sesi/login', [SessionController::class, 'login']);
 Route::get('/sesi/logout', [SessionController::class, 'logout'])->name('logout');
 Route::get('/sesi/register', [SessionController::class, 'register']);
 Route::post('/sesi/create', [SessionController::class, 'create']);
-
+Route::get('/sesi', [SessionController::class, 'index'])->name('sesi.index');
 
 Route::get('/layout/flora', [FloraController::class, 'index'])->name('menu.flora');
 Route::get('/layout/fauna', [FaunaController::class, 'index'])->name('menu.fauna');
@@ -89,6 +89,16 @@ Route::post('/fauna/faunavoice', [FaunaVoiceController::class, 'store'])->name('
 Route::delete('/fauna/faunavoice/{id}', [FaunaVoiceController::class, 'destroy'])->name('fauna.destroy');
 Route::put('/faunavoice/{id}', [FaunaVoiceController::class, 'update'])->name('faunavoice.update');
 
+
+// Flora
+Route::get('/flora/home', [FloraController::class, 'index'])->name('flora.home');
+Route::post('/flora/home', [FloraController::class, 'store'])->name('flora.store');
+Route::delete('/flora/home/{id}', [FloraController::class, 'destroy'])->name('flora.destroy');
+Route::put('/home/{id}', [FloraController::class, 'update'])->name('flora.update');
+Route::get('/readmore/{id}', [FloraController::class, 'readmore'])->name('readmore.flora');
+
+
+
 //Mulai Kuis
 Route::get('/kuis/mulaikuis', [MulaiKuisController::class, 'index'])->name('kuis.mulaikuis');
 Route::post('/kuis/mulaikuis', [MulaiKuisController::class, 'store'])->name('mulaikuis.store');
@@ -96,4 +106,4 @@ Route::get('layout/quis', [QuisController::class, 'index'])->name('menu.quis');
 Route::put('/mulaikuis/{id}', [MulaiKuisController::class, 'update'])->name('mulaikuis.update');
 
 
-
+// Landing Page
