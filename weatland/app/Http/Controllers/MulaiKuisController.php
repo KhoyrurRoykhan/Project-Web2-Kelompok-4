@@ -45,7 +45,7 @@ class MulaiKuisController extends Controller
 
 
         $kuis->update($validasiData);
-        session()->flash('success', 'Artikel berhasil diupdate.');
+        session()->flash('success', 'Soal berhasil diupdate.');
         return redirect()->back();
     }
 }

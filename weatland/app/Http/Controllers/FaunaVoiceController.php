@@ -20,8 +20,8 @@ class FaunaVoiceController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $data['image'] = $request->file('image')->store('public/faunavoice');
-        $data['audio'] = $request->file('audio')->store('public/faunavoice');
+        $data['image'] = $request->file('image')->store('faunavoice', 'public');
+        $data['audio'] = $request->file('audio')->store('faunavoice', 'public');
 
         FaunaVoice::create($data);
         session()->flash('success', 'Artike Berhasil Ditambahkan');

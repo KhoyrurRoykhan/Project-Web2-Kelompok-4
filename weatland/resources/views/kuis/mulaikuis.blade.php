@@ -13,44 +13,9 @@
 
 <body style="background-color: #ECF2FF">
     <nav class="navbar navbar-dark fixed-top" style="background-color: #3E54AC">
-<<<<<<< HEAD
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Wetland</a>
-        <a class="navbar-brand" href="#">KUIS</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-          <div class="offcanvas-header">
-            <h4 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Selamat Datang, {{ Auth::user()->name }}</h4>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link" href="/home"><h5>Home</h5></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{route('menu.flora')}}"><h5>Flora</h5></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{route('menu.fauna')}}"><h5>Fauna</h5></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{route('menu.budaya')}}"><h5>Budaya</h5></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{route('menu.quis')}}"><h5>Quis</h5></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{route('logout')}}"><h5>Logout</h5></a>
-              </li>
-            </ul>
-          </div>
-=======
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Wetland</a>
-            <a class="navbar-brand" href="#">FAUNA</a>
+            <a class="navbar-brand" href="#">KUIS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -98,7 +63,6 @@
                     </ul>
                 </div>
             </div>
->>>>>>> 320fd69daa8456d93f2082ab65c847457bee2258
         </div>
     </nav>
 
@@ -118,60 +82,12 @@
         </div>
 
         <div class="container-sm mt-5 text-left" style="width: 50%">
-          @if (session()->has('success'))
+            @if (session()->has('success'))
             <div class="alert alert-success">
                 {{ session()->get('success') }}
             </div>
         @endif
             @foreach ($items as $item)
-<<<<<<< HEAD
-            <div class="container mt-4" style="background-color: #655DBB; border-radius: 10px; padding: 10px" >
-              <h5 style="color: #ECF2FF">{{$item ->soal}}</h5>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1" style="color: #ECF2FF">
-                  {{$item->option_a}}
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                <label class="form-check-label" for="flexRadioDefault2" style="color: #ECF2FF">
-                    {{$item->option_b}}
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                <label class="form-check-label" for="flexRadioDefault3" style="color: #ECF2FF">
-                    {{$item->option_c}}
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-                <label class="form-check-label" for="flexRadioDefault4" style="color: #ECF2FF">
-                    {{$item->option_d}}
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
-                <label class="form-check-label" for="flexRadioDefault5" style="color: #ECF2FF">
-                    {{$item->Jawaban}}
-                </label>
-              </div>
-
-              <div class="mt-3">
-                <form action="{{ route('mulaikuis.destroy', $item->id) }}" method="POST" style="display: inline">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Hapus</button>
-                </form>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#editItem{{ $item->id }}">
-                    Edit
-                </button>
-              </div>
-              
-          </div>
-=======
                 <div class="container mt-4" style="background-color: #655DBB; border-radius: 10px; padding: 10px">
                     <h5 style="color: #ECF2FF">{{ $item->soal }}</h5>
                     <div class="form-check">
@@ -198,10 +114,16 @@
                             {{ $item->option_d }}
                         </label>
                     </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
+                        <label class="form-check-label" for="flexRadioDefault5" style="color: #ECF2FF"> Jawaban :
+                            {{ $item->Jawaban }}
+                        </label>
+                    </div>
 
                     <div class="mt-3">
                         @if (auth()->user()->level == 'admin')
-                            <form action="{{ route('fauna.destroy', $item->id) }}" method="POST"
+                            <form action="{{ route('mulaikuis.destroy', $item->id) }}" method="POST"
                                 style="display: inline">
                                 @csrf
                                 @method('DELETE')
@@ -215,7 +137,6 @@
                     </div>
 
                 </div>
->>>>>>> 320fd69daa8456d93f2082ab65c847457bee2258
 
 
 
@@ -234,8 +155,8 @@
                                     @csrf
                                     @method('PUT')
                                     <div class="mb-3">
-                                        <label for="title">Judul Artikel</label>
-                                        <input type="text" class="form-control" name="title" id="title"
+                                        <label for="title">Soal</label>
+                                        <input type="text" class="form-control" name="soal" id="title"
                                             value="{{ $item->soal }}">
                                     </div>
                                     <div class="mb-3">
@@ -258,6 +179,12 @@
                                         <input type="text" name="option_d" id="option_d" cols="10"
                                             rows="5" class="form-control" value="{{ $item->option_d }}">
                                     </div>
+                                    <div class="mb-3">
+                                        <label for="description">Jawaban</label>
+                                        <input type="text" name="Jawaban" id="Jawaban" cols="10"
+                                            rows="5" class="form-control" value="{{ $item->Jawaban }}">
+                                    </div>
+
                                     <button class="btn btn-primary" type="submit">Edit Kuis</button>
                                 </form>
                             </div>
@@ -279,14 +206,8 @@
                         <form action="{{ route('mulaikuis.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
-<<<<<<< HEAD
-                                <label for="title">Judul Artikel</label>
-                                <input type="text" class="form-control" name="soal" id="title"
-                                    value="{{ $item->soal }}">
-=======
-                                <label for="title">Nama Fauna</label>
+                                <label for="title">Soal</label>
                                 <textarea class="form-control" name="soal" id="soal" cols="30" rows="5"></textarea>
->>>>>>> 320fd69daa8456d93f2082ab65c847457bee2258
                             </div>
                             <div class="mb-3">
                                 <label for="description">Option A</label>
@@ -308,15 +229,12 @@
                                 <input type="text" name="option_d" id="option_d" cols="10" rows="5"
                                     class="form-control">
                             </div>
-<<<<<<< HEAD
                             <div class="mb-3">
-                              <label for="description">Jawaban</label>
-                              <input type="text" name="Jawaban" id="option_d" cols="10" rows="5" class="form-control" value="{{$item->Jawaban}}">
-                          </div>
-                            <button class="btn btn-primary" type="submit">Edit Kuis</button>
-=======
+                                <label for="description">Jawaban</label>
+                                <input type="text" name="Jawaban" id="Jawaban" cols="10" rows="5"
+                                    class="form-control">
+                            </div>
                             <button class="btn btn-primary" type="submit">Tambah Soal</button>
->>>>>>> 320fd69daa8456d93f2082ab65c847457bee2258
                         </form>
 
                     </div>
@@ -324,55 +242,6 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-        
-    @endforeach
-      </div>
-
-      <div class="modal" id="addItem" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Tambah Soal Baru</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="{{ route('mulaikuis.store') }}" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="mb-3">
-                            <label for="title">Nama Fauna</label>
-                            <textarea class="form-control" name="soal" id="soal" cols="30" rows="5"></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="description">Option A</label>
-                            <input type="text" name="option_a" id="option_a" cols="10" rows="5" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="description">Option B</label>
-                            <input type="text" name="option_b" id="option_b" cols="10" rows="5" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="description">Option C</label>
-                            <input type="text" name="option_c" id="option_c" cols="10" rows="5" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="description">Option D</label>
-                            <input type="text" name="option_d" id="option_d" cols="10" rows="5" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                          <label for="description">Jawaban</label>
-                          <input type="text" name="Jawaban" id="Jawaban" cols="10" rows="5" class="form-control">
-                      </div>
-                        <button class="btn btn-primary" type="submit">Tambah Soal</button>
-                    </form>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-=======
->>>>>>> 320fd69daa8456d93f2082ab65c847457bee2258
 
     </div>
     </div>
