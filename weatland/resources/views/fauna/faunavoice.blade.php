@@ -8,31 +8,38 @@
         @endif
         <div class="d-flex align-items-center justify-content-between mb-5">
             <h1>Fauna Voice Pulau Kalimantan</h1>
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addItem">
-                Tambah Suara Fauna
-            </button>
+            @if (auth()->user()->level == 'admin')
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addItem">
+                    Tambah Suara Fauna
+                </button>
+            @endif
         </div>
         <div>
             @foreach ($items as $item)
-
-            <div class="container text-center m-3">
-                <div class="row row-cols-4">
-                  <div class="col"><img src="{{ url('storage/' . $item->image) }}" alt="" height="70px"></div>
-                  <div class="col"><h5 class="card-title">{{ $item->title }}</h5></div>
-                  <div class="col"><audio controls src="{{ url('storage/' . $item->audio) }}"></div>
-                  <div class="col">
-                            <form action="{{ route('fauna.destroy', $item->id) }}" method="POST" style="display: inline">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Hapus</button>
-                            </form>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#editItem{{ $item->id }}">
-                                Edit
-                            </button>
-                  </div>
+                <div class="container text-center m-3">
+                    <div class="row row-cols-4">
+                        <div class="col"><img src="{{ url('storage/' . $item->image) }}" alt="" height="70px">
+                        </div>
+                        <div class="col">
+                            <h5 class="card-title">{{ $item->title }}</h5>
+                        </div>
+                        <div class="col"><audio controls src="{{ url('storage/' . $item->audio) }}"></div>
+                        <div class="col">
+                            @if (auth()->user()->level == 'admin')
+                                <form action="{{ route('fauna.destroy', $item->id) }}" method="POST"
+                                    style="display: inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                </form>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#editItem{{ $item->id }}">
+                                    Edit
+                                </button>
+                            @endif
+                        </div>
+                    </div>
                 </div>
-              </div>
 
                 {{-- <div class="col-md-4">
                     <div class="card border-0 mb-3">
@@ -81,7 +88,8 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="image">Audio</label>
-                                        <input type="file" accept="audio/*" class="form-control" name="audio" id="audio">
+                                        <input type="file" accept="audio/*" class="form-control" name="audio"
+                                            id="audio">
                                     </div>
                                     <button class="btn btn-primary" type="submit">Edit Fauna</button>
                                 </form>

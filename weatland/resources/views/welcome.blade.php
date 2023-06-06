@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Lahan Basah</title>
+    <title>Wetland</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -34,7 +34,7 @@
     <header id="header" class="fixed-top" style="background-color: #3E54AC">
         <div class="container d-flex align-items-center justify-content-between">
 
-            <h1 class="logo"><a href="index.html" style="color: aliceblue">Lahan Basah</a></h1>
+            <h1 class="logo"><a href="index.html" style="color: aliceblue">Wetland</a></h1>
 
             <nav id="navbar" class="navbar">
                 <ul>
@@ -87,7 +87,7 @@
             <div class="container">
 
                 <div class="section-title">
-                    <h2>Lahan Basah</h2>
+                    <h2>Wetland</h2>
                     <h5>Aplikasi Edukasi Tentang Flora Fauna dan Budaya di Pulau Kalimantan Berbasis Website Sebagai
                         Media
                         Belajar Mandiri</h5>

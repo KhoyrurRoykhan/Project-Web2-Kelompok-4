@@ -33,7 +33,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 // Login
-Route::resource('/home', Home::class,);
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('/home', Home::class,);
+});
+
 Route::get('/sesi', [SessionController::class, 'index']);
 Route::post('/sesi/login', [SessionController::class, 'login']);
 Route::get('/sesi/logout', [SessionController::class, 'logout'])->name('logout');

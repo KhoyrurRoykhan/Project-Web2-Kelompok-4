@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <title>Login | Wetland</title>
 </head>
+
 <body>
     <div>
-        <header class="justify-content-center py-3  border-bottom"
-            style="background-color: #3E54AC">
+        <header class="justify-content-center py-3  border-bottom" style="background-color: #3E54AC">
             <a href="/"
                 class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                 <svg class="bi me-2" width="40" height="32">
@@ -31,26 +32,30 @@
                     <!-------Image-------->
                     <img src="#" alt="">
                     <div class="text">
-                        <h3 style="color: aliceblue">Mari masuk untuk mengenal Flora, Fauna, dan Budaya di Pulau Kalimantan</h3>
+                        <h3 style="color: aliceblue">Mari masuk untuk mengenal Flora, Fauna, dan Budaya di Pulau
+                            Kalimantan</h3>
                     </div>
                 </div>
                 <div class="col-md-6 right">
-                     <div class="input-box">
-                        <header><h2>Login</h2></header>
+                    <div class="input-box">
+                        <header>
+                            <h2>Login</h2>
+                        </header>
                         @if (session()->has('success'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('success') }}
-                        </div>
+                            <div class="alert alert-success" role="alert">
+                                {{ session('success') }}
+                            </div>
                         @endif
                         @if (session()->has('error'))
-                        <div class="alert alert-danger" role="alert">
-                            {{ session('error') }}
-                        </div>
+                            <div class="alert alert-danger" role="alert">
+                                {{ session('error') }}
+                            </div>
                         @endif
                         <form action="/sesi/login" method="POST">
                             @csrf
                             <div class="input-field">
-                                <input type="text" class="input" name="email" id="email" required autocomplete="off">
+                                <input type="text" class="input" name="email" id="email" required
+                                    autocomplete="off">
                                 <label for="email" class="form-label">Email</label>
                             </div>
                             <div class="input-field">
@@ -59,16 +64,17 @@
                             </div>
                             <div class="input-field">
                                 <input type="submit" class="submit" value="Login">
-                                
+
                             </div>
                             <div class="signin">
                                 <span>Belum punya akun? <a href="sesi/register">Daftar disini</a></span>
                             </div>
                         </form>
-                     </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>
