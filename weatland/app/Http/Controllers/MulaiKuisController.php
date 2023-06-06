@@ -33,17 +33,18 @@ class MulaiKuisController extends Controller
 
     public function update(Request $request, $id)
     {
-        $fauna = MulaiKuis::find($id);
+        $kuis = MulaiKuis::find($id);
         $validasiData = $request->validate([
             'soal' => 'required|max:255',
             'option_a' => 'required|max:255',
             'option_b' => 'required|max:255',
             'option_c' => 'required|max:255',
             'option_d' => 'required|max:255',
+            'Jawaban' => 'required|max:255'
         ]);
 
 
-        $fauna->update($validasiData);
+        $kuis->update($validasiData);
         session()->flash('success', 'Artikel berhasil diupdate.');
         return redirect()->back();
     }

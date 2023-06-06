@@ -102,6 +102,7 @@ Route::get('/readmore/{id}', [FloraController::class, 'readmore'])->name('readmo
 //Mulai Kuis
 Route::get('/kuis/mulaikuis', [MulaiKuisController::class, 'index'])->name('kuis.mulaikuis');
 Route::post('/kuis/mulaikuis', [MulaiKuisController::class, 'store'])->name('mulaikuis.store');
+Route::delete('/mulaikuis/delete/{id}', [MulaiKuisController::class, 'destroy'])->name('mulaikuis.destroy');
 Route::get('layout/quis', [QuisController::class, 'index'])->name('menu.quis');
 Route::put('/mulaikuis/{id}', [MulaiKuisController::class, 'update'])->name('mulaikuis.update');
 

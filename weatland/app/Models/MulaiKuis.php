@@ -13,6 +13,7 @@ class MulaiKuis extends Model
         'option_a',
         'option_b',
         'option_c',
-        'option_d'
+        'option_d',
+        'Jawaban'
     ];
 }

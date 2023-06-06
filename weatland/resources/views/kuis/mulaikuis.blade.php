@@ -12,7 +12,7 @@
     <nav class="navbar navbar-dark fixed-top" style="background-color: #3E54AC">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Wetland</a>
-        <a class="navbar-brand" href="#">FAUNA</a>
+        <a class="navbar-brand" href="#">KUIS</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -61,6 +61,11 @@
         </div>
 
         <div class="container-sm mt-5 text-left" style="width: 50%">
+          @if (session()->has('success'))
+            <div class="alert alert-success">
+                {{ session()->get('success') }}
+            </div>
+        @endif
             @foreach ($items as $item)
             <div class="container mt-4" style="background-color: #655DBB; border-radius: 10px; padding: 10px" >
               <h5 style="color: #ECF2FF">{{$item ->soal}}</h5>
@@ -88,9 +93,15 @@
                     {{$item->option_d}}
                 </label>
               </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
+                <label class="form-check-label" for="flexRadioDefault5" style="color: #ECF2FF">
+                    {{$item->Jawaban}}
+                </label>
+              </div>
 
               <div class="mt-3">
-                <form action="{{ route('fauna.destroy', $item->id) }}" method="POST" style="display: inline">
+                <form action="{{ route('mulaikuis.destroy', $item->id) }}" method="POST" style="display: inline">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Hapus</button>
@@ -121,7 +132,7 @@
                             @method('PUT')
                             <div class="mb-3">
                                 <label for="title">Judul Artikel</label>
-                                <input type="text" class="form-control" name="title" id="title"
+                                <input type="text" class="form-control" name="soal" id="title"
                                     value="{{ $item->soal }}">
                             </div>
                             <div class="mb-3">
@@ -140,6 +151,10 @@
                                 <label for="description">Option D</label>
                                 <input type="text" name="option_d" id="option_d" cols="10" rows="5" class="form-control" value="{{$item->option_d}}">
                             </div>
+                            <div class="mb-3">
+                              <label for="description">Jawaban</label>
+                              <input type="text" name="Jawaban" id="option_d" cols="10" rows="5" class="form-control" value="{{$item->Jawaban}}">
+                          </div>
                             <button class="btn btn-primary" type="submit">Edit Kuis</button>
                         </form>
                     </div>
@@ -180,6 +195,10 @@
                             <label for="description">Option D</label>
                             <input type="text" name="option_d" id="option_d" cols="10" rows="5" class="form-control">
                         </div>
+                        <div class="mb-3">
+                          <label for="description">Jawaban</label>
+                          <input type="text" name="Jawaban" id="Jawaban" cols="10" rows="5" class="form-control">
+                      </div>
                         <button class="btn btn-primary" type="submit">Tambah Soal</button>
                     </form>
 
