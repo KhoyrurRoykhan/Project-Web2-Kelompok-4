@@ -50,8 +50,8 @@ class ArticleController extends Controller
             if ($article->image) {
                 Storage::delete('public/' . $article->image);
             }
-            $filename = 'article-' . time() . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/article', $filename);
+            $filename = 'article/' . time() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/', $filename);
             $validasiData['image'] = $filename;
         }
 

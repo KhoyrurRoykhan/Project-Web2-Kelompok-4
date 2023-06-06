@@ -51,8 +51,8 @@ class TariController extends Controller
             if ($tari->image) {
                 Storage::delete('public/' . $tari->image);
             }
-            $filename = 'tari-' . time() . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/tari', $filename);
+            $filename = 'tari/' . time() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/', $filename);
             $validasiData['image'] = $filename;
         }
 

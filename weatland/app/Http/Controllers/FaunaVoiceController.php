@@ -43,9 +43,9 @@ class FaunaVoiceController extends Controller
     {
         $faunavoice = FaunaVoice::find($id);
         $validasiData = $request->validate([
-            'title' => 'required|max:255',
+            'title' => 'max:255',
             'image' => 'image|max:1024',
-            'audio' => 'required',
+            'audio' => '',
         ]);
 
         $file = $request->file('image');
@@ -53,9 +53,19 @@ class FaunaVoiceController extends Controller
             if ($faunavoice->image) {
                 Storage::delete('public/' . $faunavoice->image);
             }
-            $filename = 'faunavoice-' . time() . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/faunavoice', $filename);
+            $filename = 'faunavoice/' . time() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/', $filename);
             $validasiData['image'] = $filename;
+        }
+
+        $fileaudio = $request->file('audio');
+        if ($fileaudio) {
+            if ($faunavoice->image) {
+                Storage::delete('public/' . $faunavoice->image);
+            }
+            $filename = 'faunavoice/' . time() . '.' . $fileaudio->getClientOriginalExtension();
+            $fileaudio->storeAs('public/', $filename);
+            $validasiData['audio'] = $filename;
         }
 
         $faunavoice->update($validasiData);

@@ -91,7 +91,7 @@
                                         <input type="file" accept="audio/*" class="form-control" name="audio"
                                             id="audio">
                                     </div>
-                                    <button class="btn btn-primary" type="submit">Edit Fauna</button>
+                                    <button class="btn btn-primary" type="submit">Edit Voice Fauna</button>
                                 </form>
                             </div>
                         </div>

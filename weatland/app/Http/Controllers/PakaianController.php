@@ -49,8 +49,8 @@ class PakaianController extends Controller
             if ($pakaian->image) {
                 Storage::delete('public/' . $pakaian->image);
             }
-            $filename = 'pakaian-' . time() . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/pakaian', $filename);
+            $filename = 'pakaian/' . time() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/', $filename);
             $validasiData['image'] = $filename;
         }
 

@@ -27,7 +27,7 @@
                             <a href="{{ route('readmore.faunakalimantan', ['id' => $item->id]) }}"
                                 class="btn btn-success">Read More</a>
                             @if (auth()->user()->level == 'admin')
-                                <form action="{{ route('fauna.destroy', $item->id) }}" method="POST"
+                                <form action="{{ route('faunakalimantan.destroy', $item->id) }}" method="POST"
                                     style="display: inline">
                                     @csrf
                                     @method('DELETE')
@@ -125,6 +125,26 @@
                         </form>
 
                     </div>
+                    <script>
+                        ClassicEditor
+                            .create(document.querySelector('#description'))
+                            .catch(error => {
+                                console.error(error);
+                            });
+    
+                        function openEditModal(id) {
+                            var titleInput = document.querySelector('#title' + id);
+                            var descInput = document.querySelector('#editdesc' + id);
+                            var titleValue = titleInput.value;
+                            var descValue = descInput.value;
+    
+                            // Set value to modal form
+                            var modalTitle = document.querySelector('#editItem' + id + ' .modal-title');
+                            var modalDesc = document.querySelector('#editItem' + id + ' #editdesc' + id);
+                            modalTitle.textContent = 'Edit Artikel - ' + titleValue;
+                            modalDesc.value = descValue;
+                        }
+                    </script>
 
                 </div>
             </div>

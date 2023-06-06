@@ -50,8 +50,8 @@ class FaunaKalimantanController extends Controller
             if ($fauna->image) {
                 Storage::delete('public/' . $fauna->image);
             }
-            $filename = 'faunakalimantan-' . time() . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/faunakalimantan', $filename);
+            $filename = 'faunakalimantan/' . time() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/', $filename);
             $validasiData['image'] = $filename;
         }
 

@@ -83,7 +83,7 @@ Route::get('/readmore/benda/{id}', [BendaController::class, 'readmore'])->name('
 //Fauna
 Route::get('/fauna/faunakalimantan', [FaunaKalimantanController::class, 'index'])->name('fauna.faunakalimantan');
 Route::post('/fauna/faunakalimantan', [FaunaKalimantanController::class, 'store'])->name('fauna.store');
-Route::delete('/fauna/faunakalimantan/{id}', [FaunaKalimantanController::class, 'destroy'])->name('fauna.destroy');
+Route::delete('/fauna/faunakalimantan/{id}', [FaunaKalimantanController::class, 'destroy'])->name('faunakalimantan.destroy');
 Route::put('/faunakalimantan/{id}', [FaunaKalimantanController::class, 'update'])->name('fauna.update');
 Route::get('/readmore/faunakalimantan/{id}', [FaunaKalimantanController::class, 'readmore'])->name('readmore.faunakalimantan');
 

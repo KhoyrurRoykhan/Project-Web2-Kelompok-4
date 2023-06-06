@@ -50,8 +50,8 @@ class BendaController extends Controller
             if ($benda->image) {
                 Storage::delete('public/' . $benda->image);
             }
-            $filename = 'benda-' . time() . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/benda', $filename);
+            $filename = 'benda/' . time() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/', $filename);
             $validasiData['image'] = $filename;
         }
 
