@@ -13,31 +13,31 @@ class FloraController extends Controller
     public function index()
     {
         $items = Flora::all();
-        return view('flora.home', [
+        return view('layout/flora', [
             'items' => $items
         ]);
     }
     public function store(Request $request)
     {
         $data = $request->all();
-        $data['image'] = $request->file('image')->store('tari', 'public');
+        $data['image'] = $request->file('image')->store('flora', 'public');
         Flora::create($data);
         session()->flash('success', 'Artikel Berhasil Ditambahkan');
         return redirect()->back();
     }
     public function destroy($id)
     {
-        $tari = Flora::find($id);
-        if ($tari->image) {
-            Storage::delete('public/' . $tari->image);
+        $flora = Flora::find($id);
+        if ($flora->image) {
+            Storage::delete('public/' . $flora->image);
         }
-        $tari->delete();
+        $flora->delete();
         session()->flash('success', 'Artikel berhasil dihapus.');
         return redirect()->back();
     }
     public function update(Request $request, $id)
     {
-        $tari = Flora::find($id);
+        $flora = Flora::find($id);
         $validasiData = $request->validate([
             'title' => 'required|max:255',
             'image' => 'image|max:1024',
@@ -46,22 +46,22 @@ class FloraController extends Controller
 
         $file = $request->file('image');
         if ($file) {
-            if ($tari->image) {
-                Storage::delete('public/' . $tari->image);
+            if ($flora->image) {
+                Storage::delete('public/' . $flora->image);
             }
-            $filename = 'tari-' . time() . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/tari', $filename);
+            $filename = 'flora/' . time() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/', $filename);
             $validasiData['image'] = $filename;
         }
 
-        $tari->update($validasiData);
+        $flora->update($validasiData);
         session()->flash('success', 'Artikel berhasil diupdate.');
         return redirect()->back();
     }
     public function readmore($id)
     {
-        $item = Tari::find($id); // Retrieve the item based on the given ID
+        $item = Flora::find($id); // Retrieve the item based on the given ID
 
-        return view('budaya.readmore', compact('item'));
+        return view('flora.readmore', compact('item'));
     }
 }

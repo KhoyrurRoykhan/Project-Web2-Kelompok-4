@@ -1,78 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Kuis</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- owl carousel style -->
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.carousel.min.css" />
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="{{ asset('css/css_landing_page/css/bootstrap.min.css')}}">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="{{ asset('css/css_landing_page/css/style.css')}}">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="{{ asset('css/css_landing_page/css/responsive.css')}}">
+      <!-- fevicon -->
+      <link rel="icon" href="{{ asset('css/css_landing_page/images/fevicon.png')}}" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="{{asset('css/css_landing_page/css/jquery.mCustomScrollbar.min.css')}}">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="{{asset('css/css_landing_page/css/owl.carousel.min.css')}}">
+      <link rel="stylesheet" href="{{asset('css/css_landing_page/css/owl.theme.default.min.css')}}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+
+
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-</head>
+    <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
 
-<body style="background-color: #ECF2FF">
-    <nav class="navbar navbar-dark fixed-top" style="background-color: #3E54AC">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Wetland</a>
-            <a class="navbar-brand" href="#">KUIS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
-                aria-labelledby="offcanvasDarkNavbarLabel">
-                <div class="offcanvas-header">
-                    <h4 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Selamat Datang, {{ Auth::user()->name }}
-                    </h4>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/home">
-                                <h5>Home</h5>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('menu.flora') }}">
-                                <h5>Flora</h5>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('menu.fauna') }}">
-                                <h5>Fauna</h5>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('menu.budaya') }}">
-                                <h5>Budaya</h5>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('menu.quis') }}">
-                                <h5>Quis</h5>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('logout') }}">
-                                <h5>Logout</h5>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+   </head>
+   <!--header section start -->
+   <div class="header_section" style="background-image: url({{asset('img/banner-fauna-kalimantan.png')}})">
+      <nav class="navbar navbar-dark bg-dark">
+         <a class="logo ml-3" href="index.html"><img src="{{asset('css/css_landing_page/images/logo.png')}}"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse ml-3" id="navbarsExample01">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+             </li>
+             <li class="nav-item active">
+                <a class="nav-link" href="{{ route('menu.flora') }}">Flora</a>
+             </li>
+             <li class="nav-item active">
+                <a class="nav-link" href="{{ route('menu.fauna') }}">Fauna</a>
+             </li>
+             <li class="nav-item active">
+                <a class="nav-link" href="{{ route('menu.budaya') }}">Budaya</a>
+             </li>
+             <li class="nav-item active">
+                <a class="nav-link" href="{{ route('menu.quis') }}">Kuis</a>
+             </li>
+             <li class="nav-item">
+                <a class="nav-link" href="{{ route('logout') }}">Keluar</a>
+             </li>
+            </ul>
+         </div>
+      </nav>
+      <!--banner section start -->
+      <div class="banner_section layout_padding">
+         <div class="container-fluid">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+               <ol class="carousel-indicators">
+                  
+                  
+                
+               </ol>
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <div class="container">
+                        
+                        <h1 class="banner_taital_1">K u i s</h1>
+                        <p class="banner_text">"Telusuri beragam habitat yang ada di Kalimantan, mulai dari hutan hujan tropis, sungai-sungai yang mengalir, hingga rawa-rawa yang luas. Lihatlah bagaimana fauna Kalimantan beradaptasi dengan lingkungan hidup mereka yang khas."</p>
+   
+                     </div>
+                  </div>
+                  {{-- <div class="carousel-item">
+                     <div class="container">
+                        
+                        <h1 class="banner_taital_1">S u a r a - f a u n a - k a l i m a n t a n</h1>
+                        <p class="banner_text">"Anda dapat mendengarkan suara-suara menarik dari fauna yang hidup di pulau Kalimantan. Nikmati pengalaman audio yang memukau dan mendekatkan Anda dengan keindahan alam dan keberagaman satwa-satwa Kalimantan."</p>
+                        
+                     </div>
+                  </div> --}}
+                  
+                  </div>
+               </div>
             </div>
-        </div>
-    </nav>
+         </div>
+      </div>
+      <!--banner section end -->
+   </div>
+   <!--header section end -->
 
-    <div class="container mb-3" style="margin-top: 70px">
+      <!-- about section start -->
+      <div class="container mb-3" style="margin-top: 70px">
         <div class="text-center">
             <h1>Selamat Datang, {{ Auth::user()->name }}</h1>
             <br>
             <h3>Kuis Flora, Fauna, dan Budaya di Pulau Kalimantan</h3>
         </div>
-
+    
         <div class="text-right">
             @if (auth()->user()->level == 'admin')
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addItem">
@@ -80,7 +120,16 @@
                 </button>
             @endif
         </div>
-
+    
+        <div class="text-center">
+            <form action="{{ route('startkuis') }}" method="get"
+                style="display: inline">
+                <button class="btn btn-primary" data-bs-toggle="modal">
+                    Mulai Kuis
+                </button>
+            </form>
+        </div>
+    
         <div class="container-sm mt-5 text-left" style="width: 50%">
             @if (session()->has('success'))
             <div class="alert alert-success">
@@ -120,7 +169,7 @@
                             {{ $item->Jawaban }}
                         </label>
                     </div>
-
+    
                     <div class="mt-3">
                         @if (auth()->user()->level == 'admin')
                             <form action="{{ route('mulaikuis.destroy', $item->id) }}" method="POST"
@@ -135,11 +184,11 @@
                             </button>
                         @endif
                     </div>
-
+    
                 </div>
-
-
-
+    
+    
+    
                 <!-- Modal Edit -->
                 <div class="modal" id="editItem{{ $item->id }}" tabindex="-1">
                     <div class="modal-dialog">
@@ -184,7 +233,7 @@
                                         <input type="text" name="Jawaban" id="Jawaban" cols="10"
                                             rows="5" class="form-control" value="{{ $item->Jawaban }}">
                                     </div>
-
+    
                                     <button class="btn btn-primary" type="submit">Edit Kuis</button>
                                 </form>
                             </div>
@@ -193,7 +242,7 @@
                 </div>
             @endforeach
         </div>
-
+    
         <div class="modal" id="addItem" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -236,24 +285,118 @@
                             </div>
                             <button class="btn btn-primary" type="submit">Tambah Soal</button>
                         </form>
-
+    
                     </div>
-
+    
                 </div>
             </div>
         </div>
-
+    
     </div>
     </div>
 
+    <!-- about section end -->
 
+      
 
+  
 
+      {{-- <!-- client section start -->
+      <div class="client_section layout_padding">
+         <div id="main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="container">
+                     <h1 class="casino_taital"><span>Fauna Kalimantan</span></h1>
+                     <div class="image_7"><img style="width:130px;" src="{{asset('img/faunalist.png')}}"></div>
+                     <h4 class="jone_text">Fauna Kalimantan</h4>
+                     <p class="ipsum_text">Telusuri beragam habitat yang ada di Kalimantan, mulai dari hutan hujan tropis, sungai-sungai yang mengalir, hingga rawa-rawa yang luas. Lihatlah bagaimana fauna Kalimantan beradaptasi dengan lingkungan hidup mereka yang khas.</p>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container">
+                    <h1 class="casino_taital"><span>Voice Fauna</span></h1>
+                    <div class="image_7"><img style="width:130px;" src="{{asset('img/voiceanimal.png')}}"></div>
+                    <h4 class="jone_text">Voice Fauna</h4>
+                    <p class="ipsum_text"> Anda dapat mendengarkan suara-suara menarik dari fauna yang hidup di pulau Kalimantan. Nikmati pengalaman audio yang memukau dan mendekatkan Anda dengan keindahan alam dan keberagaman satwa-satwa Kalimantan. Mari jelajahi dunia suara fauna Kalimantan!</p>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container">
+                    <div class="container">
+                        <h1 class="casino_taital"><span>Flora</span></h1>
+                        <div class="image_7"><img style="width:130px;" src="{{asset('img/flora.png')}}"></div>
+                        <h4 class="jone_text">Flora</h4>
+                        <p class="ipsum_text"> Jelajahi flora yang hidup di berbagai ekosistem, seperti hutan hujan tropis, padang rumput, gurun, pegunungan, dan lain-lain. Temukan adaptasi unik tumbuhan terhadap lingkungan di mana mereka tumbuh.</p>
+                      </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                <div class="container">
+                  <div class="container">
+                      <h1 class="casino_taital"><span>Benda</span></h1>
+                      <div class="image_7"><img style="width:130px;" src="{{asset('img/benda.png')}}"></div>
+                      <h4 class="jone_text">Benda</h4>
+                      <p class="ipsum_text">Anda dapat menjelajahi keunikan dan keindahan benda-benda tradisional dari Kalimantan. Mari kita melangkah ke dalam warisan budaya yang kaya dan menikmati keberagaman seni dan kerajinan yang ada di pulau ini. Saksikanlah pesona benda-benda khas Kalimantan!</p>
+                    </div>
+                </div>
+             </div>
+               <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+               <i class="fa fa-angle-left"></i>
+               </a>
+               <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+               <i class="fa fa-angle-right"></i>
+               </a>
+            </div>
+         </div>
+      </div>
+      <!-- client section end --> --}}
+    
+      <!-- footer section start -->
+      <div class="footer_section layout_padding footer_main">
+        <div class="container">
+            <div class="social_icon">
+               <ul>
+                  <li><a href="#"><img src="{{asset('css/css_landing_page/images/fb-icon.png')}}"></a></li>
+                  <li><a href="#"><img src="{{asset('css/css_landing_page/images/twitter-icon.png')}}"></a></li>
+                  <li><a href="#"><img src="{{asset('css/css_landing_page/images/linkedin-icon.png')}}"></a></li>
+                  <li><a href="#"><img src="{{asset('css/css_landing_page/images/instagram-icon.png')}}"></a></li>
+               </ul>
+            </div>
+            <div class="location_section">
+               <ul>
+                  <li><a href="#"><img src="{{asset('css/css_landing_page/images/mail-icon.png')}}"><span class="padding_left_15">demo@gmail.com</span></a></li>
+                  <li><a href="#"><img src="{{asset('css/css_landing_page/images/call-icon.png')}}"><span class="padding_left_15">(+71 9876543210)</span></a></li>
+                  <li><a href="#"><img src="{{asset('css/css_landing_page/images/map-icon.png')}}"><span class="padding_left_15">Location</span></a></li>
+               </ul>
+            </div>
+            <!-- copyright section start -->
+            <div class="copyright_section">
+            </div>
+            <!-- copyright section end -->
+         </div>
+      <!-- footer section end -->
+      <!-- Javascript files-->
+      <script src="{{asset('css/css_landing_page/js/jquery.min.js')}}"></script>
+      <script src="{{asset('css/css_landing_page/js/popper.min.js')}}"></script>
+      <script src="{{asset('css/css_landing_page/js/bootstrap.bundle.min.js')}}"></script>
+      <script src="{{asset('css/css_landing_page/js/jquery-3.0.0.min.js')}}"></script>
+      <script src="{{asset('css/css_landing_page/js/plugin.js')}}"></script>
+      <!-- sidebar -->
+      <script src="{{asset('css/css_landing_page/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+      <script src="{{asset('css/css_landing_page/js/custom.js')}}"></script>
+      <!-- javascript --> 
+      <script src="{{asset('css/css_landing_page/js/owl.carousel.js')}}"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script> 
+      <script type="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2//2.0.0-beta.2.4/owl.carousel.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+      <script src="../../assets/js/vendor/popper.min.js"></script>
+      <script src="../../dist/js/bootstrap.min.js"></script>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
-</body>
-
+   </body>
 </html>
+

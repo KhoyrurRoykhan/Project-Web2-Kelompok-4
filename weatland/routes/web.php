@@ -95,10 +95,10 @@ Route::put('/faunavoice/{id}', [FaunaVoiceController::class, 'update'])->name('f
 
 
 // Flora
-Route::get('/flora/home', [FloraController::class, 'index'])->name('flora.home');
-Route::post('/flora/home', [FloraController::class, 'store'])->name('flora.store');
-Route::delete('/flora/home/{id}', [FloraController::class, 'destroy'])->name('flora.destroy');
-Route::put('/home/{id}', [FloraController::class, 'update'])->name('flora.update');
+Route::get('/flora', [FloraController::class, 'index'])->name('flora.home');
+Route::post('/flora/store', [FloraController::class, 'store'])->name('flora.store');
+Route::delete('/flora/delete/{id}', [FloraController::class, 'destroy'])->name('flora.destroy');
+Route::put('/flora/update/{id}', [FloraController::class, 'update'])->name('flora.update');
 Route::get('/readmore/{id}', [FloraController::class, 'readmore'])->name('readmore.flora');
 
 
@@ -110,5 +110,12 @@ Route::delete('/mulaikuis/delete/{id}', [MulaiKuisController::class, 'destroy'])
 Route::get('layout/quis', [QuisController::class, 'index'])->name('menu.quis');
 Route::put('/mulaikuis/{id}', [MulaiKuisController::class, 'update'])->name('mulaikuis.update');
 
+Route::get('/kuis/startkuis', [QuisController::class, 'startkuis'])->name('startkuis');
+Route::post('/kuis/leaderboardinsert', [QuisController::class, 'store_leaderboard'])->name('store.leaderboard');
 
-// Landing Page
+Route::get('/kuis/leaderboard', [QuisController::class, 'viewleaderboard'])->name('leaderboard');
+
+
+// export
+Route::get('leaderboard/pdf',[QuisController::class,'exportPDF'])->name('export.pdf');
+
