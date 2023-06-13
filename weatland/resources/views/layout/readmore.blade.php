@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Fauna Kalimantan</title>
+    <title>Flora Kalimantan</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -79,7 +79,7 @@
 
                 <center>
                     <div id="buttons" style="margin-bottom: 20px">
-                        <form action="{{ route('fauna.faunakalimantan') }}">
+                        <form action="{{ route('flora.home') }}">
                             <button
                                 style="background-color: rgb(218, 75, 75); font-size: 20px; padding: 10px 20px; border-radius: 10px;"
                                 class="continue">Kembali</button>

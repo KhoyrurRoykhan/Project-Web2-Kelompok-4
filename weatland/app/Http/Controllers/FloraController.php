@@ -62,6 +62,6 @@ class FloraController extends Controller
     {
         $item = Flora::find($id); // Retrieve the item based on the given ID
 
-        return view('flora.readmore', compact('item'));
+        return view('layout.readmore', compact('item'));
     }
 }
