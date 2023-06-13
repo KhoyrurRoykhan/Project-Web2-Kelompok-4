@@ -38,6 +38,10 @@
 
     <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
 
+    <style>
+        
+    </style>
+
    </head>
    <!--header section start -->
    <div class="header_section" style="background-image: url({{asset('img/banner-fauna-kalimantan.png')}})">
@@ -124,9 +128,13 @@
         <div class="text-center">
             <form action="{{ route('startkuis') }}" method="get"
                 style="display: inline">
-                <button class="btn btn-primary" data-bs-toggle="modal">
-                    Mulai Kuis
-                </button>
+
+                <a class="btn" type="submit" href="{{ route('startkuis') }}" title="">Button</a>
+                <span class="color color--blue" data-value="1"></span>
+                <span class="color color--orange" data-value="1"></span>
+                <span class="color color--green" data-value="1"></span>
+                <span class="color color--white" data-value="1"></span>
+
             </form>
         </div>
     
