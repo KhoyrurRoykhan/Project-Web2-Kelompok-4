@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Export PDF</title>
     <style>
@@ -9,18 +10,23 @@
         }
 
 
-        th, td {
+        th,
+        td {
             border: 1px solid black;
             padding: 5px;
         }
     </style>
 </head>
+
 <body>
-    <h1>Data Leaderboard</h1>
+    <center>
+        <h1>Data Leaderboard</h1>
+    </center>
     <table>
         <thead>
             <tr>
                 <th>No</th>
+                <th>id</th>
                 <th>Nama</th>
                 <th>Skor</th>
                 <!-- Tambahkan kolom sesuai dengan struktur tabel Anda -->
@@ -29,13 +35,15 @@
         <tbody>
             @foreach ($data as $item)
                 <tr>
-                    <td>{{ $item->id}}</td>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $item->id }}</td>
                     <td>{{ $item->nama }}</td>
                     <td>{{ $item->skor }}</td>
-                    <!-- Tambahkan kolom sesuai dengan struktur tabel Anda -->
+
                 </tr>
             @endforeach
         </tbody>
     </table>
 </body>
+
 </html>

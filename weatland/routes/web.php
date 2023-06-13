@@ -13,10 +13,12 @@ use App\Http\Controllers\FaunaController;
 use App\Http\Controllers\FloraController;
 use App\Http\Controllers\BudayaController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\PakaianController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\RumahAdatController;
 use App\Http\Controllers\FaunaKalimantanController;
+use Maatwebsite\Excel\Facades\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -117,5 +119,6 @@ Route::get('/kuis/leaderboard', [QuisController::class, 'viewleaderboard'])->nam
 
 
 // export
-Route::get('leaderboard/pdf',[QuisController::class,'exportPDF'])->name('export.pdf');
+Route::get('leaderboard/pdf', [QuisController::class, 'exportPDF'])->name('export.pdf');
 
+Route::get("leaderboard/excel", [ExcelController::class, 'export'])->name('export.excel');
