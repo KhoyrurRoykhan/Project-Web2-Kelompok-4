@@ -38,7 +38,9 @@ Route::get('/', function () {
 // Login
 
 
-Route::resource('/home', Home::class,)->middleware('isLogin');
+Route::resource('/home', Home::class)->middleware('isLogin')->names([
+    'index' => 'home.home',
+]);
 
 
 Route::get('/layout/flora', [FloraController::class, 'index'])->name('menu.flora')->middleware('isLogin');

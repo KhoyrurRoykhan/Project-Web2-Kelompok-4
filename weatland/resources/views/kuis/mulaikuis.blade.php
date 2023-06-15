@@ -57,7 +57,7 @@
         <div class="collapse navbar-collapse ml-3" id="navbarsExample01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="{{ route('home.home') }}">Home</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ route('menu.flora') }}">Flora</a>
@@ -134,7 +134,7 @@
     <div class="text-center">
         <form action="{{ route('startkuis') }}" method="get" style="display: inline">
 
-            <a class="btn" type="submit" href="{{ route('startkuis') }}" title="">Button</a>
+            <a class="btn btn-primary" type="submit" href="{{ route('startkuis') }}" title="">Mulai Kuis</a>
             <span class="color color--blue" data-value="1"></span>
             <span class="color color--orange" data-value="1"></span>
             <span class="color color--green" data-value="1"></span>
