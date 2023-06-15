@@ -35,10 +35,8 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/home">
-                                <h5>Home</h5>
-                            </a>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ route('home.home') }}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('menu.flora') }}">

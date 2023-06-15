@@ -45,7 +45,7 @@
         <div class="collapse navbar-collapse" id="navbarsExample01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="{{ route('home.home') }}">Home</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ route('menu.flora') }}">Flora</a>
@@ -74,7 +74,9 @@
         <div class="card shadow">
             <img src="{{ url('storage/' . $item->image) }}" alt="{{ $item->title }}" class="card-img-top">
             <div class="card-body">
-                <h3 class="card-title">{{ $item->title }}</h3>
+                <span>
+                    <h1 class="card-title">{{ $item->title }}</h1>
+                </span>
                 <p class="card-text" type="html" id="desc">{!! htmlspecialchars_decode($item->description) !!}</p>
 
                 <center>
