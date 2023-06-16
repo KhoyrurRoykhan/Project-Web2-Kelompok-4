@@ -45,7 +45,7 @@
 <!--header section start -->
 <div class="header_section" style="background-image: url({{ asset('img/banner-rumah-adat.png') }})">
     <nav class="navbar navbar-dark bg-dark">
-        <a class="logo ml-3" href="index.html"><img src="{{ asset('css/css_landing_page/images/logo.png') }}"></a>
+        {{-- <a class="logo ml-3" href="index.html"><img src="{{ asset('css/css_landing_page/images/logo.png') }}"></a> --}}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01"
             aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -87,9 +87,7 @@
                         <div class="container">
 
                             <h1 class="banner_taital_1">R u m a h - a d a t</h1>
-                            <p class="banner_text">"Telusuri beragam habitat yang ada di Kalimantan, mulai dari hutan
-                                hujan tropis, sungai-sungai yang mengalir, hingga rawa-rawa yang luas. Lihatlah
-                                bagaimana fauna Kalimantan beradaptasi dengan lingkungan hidup mereka yang khas."</p>
+                            <p class="banner_text">"Nikmati kesejukan alam dan keunikan rumah adat Kalimantan, dengan atap berbentuk tanduk kerbau dan desain yang mencerminkan hubungan harmonis dengan alam sekitarnya."</p>
 
                         </div>
                     </div>

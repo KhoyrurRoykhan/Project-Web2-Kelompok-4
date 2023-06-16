@@ -452,7 +452,7 @@ h1::before {
   <section class="section-{{ $key + 1 }}" id="section-{{ $key + 1 }}" style="{{ $key > 0 ? 'display:none' : '' }}" >
     <main>
       <div class="text-container" style="font-family: 'Rubik', sans-serif;">
-        <h3>Pure CSS Quiz</h3>
+        <h3>Kuis Flora Fauna dan Budaya Kalimantan</h3>
         <p>QUESTION {{ $key + 1 }} OF {{ count($items) }}</p>
         <p>{{ $item->soal }}</p>
       </div >

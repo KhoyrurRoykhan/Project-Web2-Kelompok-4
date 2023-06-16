@@ -45,12 +45,12 @@
 <!--header section start -->
 <div class="header_section" style="background-image: url({{ asset('img/banner-flora.png') }})">
     <nav class="navbar navbar-dark bg-dark">
-        <a class="logo" href="index.html"><img src="{{ asset('css/css_landing_page/images/logo.png') }}"></a>
+        {{-- <a class="logo" href="index.html"><img src="{{ asset('css/css_landing_page/images/logo.png') }}"></a> --}}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01"
             aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarsExample01">
+        <div class="collapse navbar-collapse ml-3" id="navbarsExample01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ route('home.home') }}">Home</a>

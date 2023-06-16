@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>Kuis</title>
+    <title>Fauna Kalimantan</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -39,17 +39,73 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-    <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
-
     <style>
+        button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 500;
+  line-height: 1;
+  padding: 1em 1.5em;
+  position: relative;
+  transition: filter var(--motion-duration);
+}
 
+button:hover {
+  filter: brightness(1.1);
+}
+
+button:active {
+  filter: brightness(0.9);
+}
+
+button > span {
+  display: block;
+  position: relative;
+  transition: transform var(--motion-duration) var(--motion-ease);
+  z-index: 1;
+}
+
+button:hover > span {
+  transform: scale(1.05);
+}
+
+button:active > span {
+  transform: scale(0.95);
+}
+
+button > svg {
+  fill: #de560c;
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
+}
+
+button > svg > path {
+  transition: var(--motion-duration) var(--motion-ease);
+}
+
+button:hover > svg > path {
+  d: path("M0,0 C0,-5 100,-5 100,0 C105,0 105,100 100,100 C100,105 0,105 0,100 C-5,100 -5,0 0,0");
+}
+
+button:active > svg > path {
+  d: path("M0,0 C30,10 70,10 100,0 C95,30 95,70 100,100 C70,90 30,90 0,100 C5,70 5,30 0,0");
+}
     </style>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
 
 </head>
 <!--header section start -->
-<div class="header_section" style="background-image: url({{ asset('img/banner-fauna-kalimantan.png') }})">
+<div class="header_section" style="background-image: url({{ asset('img/banner-kuis.png') }})">
     <nav class="navbar navbar-dark bg-dark">
-        <a class="logo ml-3" href="index.html"><img src="{{ asset('css/css_landing_page/images/logo.png') }}"></a>
+        {{-- <a class="logo ml-3" href="index.html"><img src="{{ asset('css/css_landing_page/images/logo.png') }}"></a> --}}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01"
             aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -90,10 +146,8 @@
                     <div class="carousel-item active">
                         <div class="container">
 
-                            <h1 class="banner_taital_1">K u i s</h1>
-                            <p class="banner_text">"Telusuri beragam habitat yang ada di Kalimantan, mulai dari hutan
-                                hujan tropis, sungai-sungai yang mengalir, hingga rawa-rawa yang luas. Lihatlah
-                                bagaimana fauna Kalimantan beradaptasi dengan lingkungan hidup mereka yang khas."</p>
+                            <h1 class="banner_taital_1">K U I S</h1>
+                            <p class="banner_text">"Kuis flora fauna dan budaya Kalimantan akan membawa Anda dalam perjalanan pengetahuan yang menarik. Jawab pertanyaan seputar pohon bakau, bekantan, dan senjata tradisional suku Ngaju."</p>
 
                         </div>
                     </div>
@@ -116,14 +170,15 @@
 <!--header section end -->
 
 <!-- about section start -->
-<div class="container mb-3" style="margin-top: 70px">
+<!-- about section start -->
+<div class="container mb-3">
     <div class="text-center">
-        <h1>Selamat Datang, {{ Auth::user()->name }}</h1>
+        <h1>Hallo {{ Auth::user()->name }}, Selamat datang di halaman kuis</h1>
         <br>
-        <h3>Kuis Flora, Fauna, dan Budaya di Pulau Kalimantan</h3>
+        <h4>Silahkan klik tombol mulai dibawah ini untuk memulai kuis!</h4>
     </div>
 
-    <div class="text-right">
+    <div class="text-right mt-4">
         @if (auth()->user()->level == 'admin')
             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addItem">
                 Tambah Soal
@@ -134,11 +189,12 @@
     <div class="text-center">
         <form action="{{ route('startkuis') }}" method="get" style="display: inline">
 
-            <a class="btn btn-primary" type="submit" href="{{ route('startkuis') }}" title="">Mulai Kuis</a>
-            <span class="color color--blue" data-value="1"></span>
-            <span class="color color--orange" data-value="1"></span>
-            <span class="color color--green" data-value="1"></span>
-            <span class="color color--white" data-value="1"></span>
+            <button type="submit" style="width: 20%; height: 20%;">
+                <span >Mulai Kuis!</span> 
+                <svg viewBox="-5 -5 110 110" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M0,0 C0,0 100,0 100,0 C100,0 100,100 100,100 C100,100 0,100 0,100 C0,100 0,0 0,0"/>
+                </svg>
+              </button>
 
         </form>
     </div>
@@ -314,13 +370,13 @@
 </div>
 </div>
 
-<!-- about section end -->
+    <!-- about section end -->
 
 
 
 
 
-{{-- <!-- client section start -->
+    {{-- <!-- client section start -->
       <div class="client_section layout_padding">
          <div id="main_slider" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -371,61 +427,61 @@
       </div>
       <!-- client section end --> --}}
 
-<!-- footer section start -->
-<div class="footer_section layout_padding footer_main">
-    <div class="container">
-        <div class="social_icon">
-            <ul>
-                <li><a href="#"><img src="{{ asset('css/css_landing_page/images/fb-icon.png') }}"></a></li>
-                <li><a href="#"><img src="{{ asset('css/css_landing_page/images/twitter-icon.png') }}"></a>
-                </li>
-                <li><a href="#"><img src="{{ asset('css/css_landing_page/images/linkedin-icon.png') }}"></a>
-                </li>
-                <li><a href="#"><img src="{{ asset('css/css_landing_page/images/instagram-icon.png') }}"></a>
-                </li>
-            </ul>
+    <!-- footer section start -->
+    <div class="footer_section layout_padding footer_main">
+        <div class="container">
+            <div class="social_icon">
+                <ul>
+                    <li><a href="#"><img src="{{ asset('css/css_landing_page/images/fb-icon.png') }}"></a></li>
+                    <li><a href="#"><img src="{{ asset('css/css_landing_page/images/twitter-icon.png') }}"></a>
+                    </li>
+                    <li><a href="#"><img
+                                src="{{ asset('css/css_landing_page/images/linkedin-icon.png') }}"></a></li>
+                    <li><a href="#"><img
+                                src="{{ asset('css/css_landing_page/images/instagram-icon.png') }}"></a></li>
+                </ul>
+            </div>
+            <div class="location_section">
+                <ul>
+                    <li><a href="#"><img src="{{ asset('css/css_landing_page/images/mail-icon.png') }}"><span
+                                class="padding_left_15">demo@gmail.com</span></a></li>
+                    <li><a href="#"><img src="{{ asset('css/css_landing_page/images/call-icon.png') }}"><span
+                                class="padding_left_15">(+71 9876543210)</span></a></li>
+                    <li><a href="#"><img src="{{ asset('css/css_landing_page/images/map-icon.png') }}"><span
+                                class="padding_left_15">Location</span></a></li>
+                </ul>
+            </div>
+            <!-- copyright section start -->
+            <div class="copyright_section">
+            </div>
+            <!-- copyright section end -->
         </div>
-        <div class="location_section">
-            <ul>
-                <li><a href="#"><img src="{{ asset('css/css_landing_page/images/mail-icon.png') }}"><span
-                            class="padding_left_15">demo@gmail.com</span></a></li>
-                <li><a href="#"><img src="{{ asset('css/css_landing_page/images/call-icon.png') }}"><span
-                            class="padding_left_15">(+71 9876543210)</span></a></li>
-                <li><a href="#"><img src="{{ asset('css/css_landing_page/images/map-icon.png') }}"><span
-                            class="padding_left_15">Location</span></a></li>
-            </ul>
-        </div>
-        <!-- copyright section start -->
-        <div class="copyright_section">
-        </div>
-        <!-- copyright section end -->
-    </div>
-    <!-- footer section end -->
-    <!-- Javascript files-->
-    <script src="{{ asset('css/css_landing_page/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('css/css_landing_page/js/popper.min.js') }}"></script>
-    <script src="{{ asset('css/css_landing_page/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('css/css_landing_page/js/jquery-3.0.0.min.js') }}"></script>
-    <script src="{{ asset('css/css_landing_page/js/plugin.js') }}"></script>
-    <!-- sidebar -->
-    <script src="{{ asset('css/css_landing_page/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-    <script src="{{ asset('css/css_landing_page/js/custom.js') }}"></script>
-    <!-- javascript -->
-    <script src="{{ asset('css/css_landing_page/js/owl.carousel.js') }}"></script>
-    <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-    <script type="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2//2.0.0-beta.2.4/owl.carousel.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script>
-        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')
-    </script>
-    <script src="../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+        <!-- footer section end -->
+        <!-- Javascript files-->
+        <script src="{{ asset('css/css_landing_page/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('css/css_landing_page/js/popper.min.js') }}"></script>
+        <script src="{{ asset('css/css_landing_page/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('css/css_landing_page/js/jquery-3.0.0.min.js') }}"></script>
+        <script src="{{ asset('css/css_landing_page/js/plugin.js') }}"></script>
+        <!-- sidebar -->
+        <script src="{{ asset('css/css_landing_page/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+        <script src="{{ asset('css/css_landing_page/js/custom.js') }}"></script>
+        <!-- javascript -->
+        <script src="{{ asset('css/css_landing_page/js/owl.carousel.js') }}"></script>
+        <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+        <script type="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2//2.0.0-beta.2.4/owl.carousel.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+        <script>
+            window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')
+        </script>
+        <script src="../../assets/js/vendor/popper.min.js"></script>
+        <script src="../../dist/js/bootstrap.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-    </script>
-    </body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+        </script>
+        </body>
 
 </html>

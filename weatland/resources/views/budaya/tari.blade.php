@@ -45,7 +45,7 @@
 <!--header section start -->
 <div class="header_section" style="background-image: url({{ asset('img/banner-tari.png') }})">
     <nav class="navbar navbar-dark bg-dark">
-        <a class="logo ml-3" href="index.html"><img src="{{ asset('css/css_landing_page/images/logo.png') }}"></a>
+        {{-- <a class="logo ml-3" href="index.html"><img src="{{ asset('css/css_landing_page/images/logo.png') }}"></a> --}}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01"
             aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -87,9 +87,7 @@
                         <div class="container">
 
                             <h1 class="banner_taital_1">t a r i - t r a d i s i o n a l</h1>
-                            <p class="banner_text">"Telusuri beragam habitat yang ada di Kalimantan, mulai dari hutan
-                                hujan tropis, sungai-sungai yang mengalir, hingga rawa-rawa yang luas. Lihatlah
-                                bagaimana fauna Kalimantan beradaptasi dengan lingkungan hidup mereka yang khas."</p>
+                            <p class="banner_text">"Saksikanlah harmoni gerakan dan irama musik dalam pertunjukan tari tradisional Kalimantan, yang menceritakan cerita-cerita legendaris dan menghormati hubungan manusia dengan alam."</p>
 
                         </div>
                     </div>

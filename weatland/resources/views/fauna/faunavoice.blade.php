@@ -45,7 +45,7 @@
 <!--header section start -->
 <div class="header_section" style="background-image: url({{ asset('img/banner-suara-fauna.png') }})">
     <nav class="navbar navbar-dark bg-dark">
-        <a class="logo ml-3" href="index.html"><img src="{{ asset('css/css_landing_page/images/logo.png') }}"></a>
+        {{-- <a class="logo ml-3" href="index.html"><img src="{{ asset('css/css_landing_page/images/logo.png') }}"></a> --}}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01"
             aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

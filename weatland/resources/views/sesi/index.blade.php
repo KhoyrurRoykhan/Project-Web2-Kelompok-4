@@ -33,7 +33,7 @@
     <!--header section start -->
     <div class="header_section">
         <nav class="navbar navbar-dark bg-dark">
-           <a class="logo" href="/"><img src="{{asset('css/css_landing_page/images/logo.png')}}"></a>
+           <a class="logo" href="/"><img src="{{asset('img/logo bw.png')}}"></a>
            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
            <span class="navbar-toggler-icon"></span>
            </button>

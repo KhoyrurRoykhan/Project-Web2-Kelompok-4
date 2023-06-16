@@ -125,5 +125,5 @@ Route::get('/sesi', [SessionController::class, 'index'])->middleware('isTamu');
 Route::post('/sesi/login', [SessionController::class, 'login'])->name('login')->middleware('isTamu');
 Route::get('/sesi/logout', [SessionController::class, 'logout'])->name('logout');
 Route::get('/sesi/register', [SessionController::class, 'register'])->middleware('isTamu');
-Route::post('/sesi/create', [SessionController::class, 'create'])->middleware('isTamu');
+Route::post('/sesi/create', [SessionController::class, 'create'])->name('daftar.akun')->middleware('isTamu');
 Route::get('/sesi', [SessionController::class, 'index'])->name('sesi.index')->middleware('isTamu');
