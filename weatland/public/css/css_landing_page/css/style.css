@@ -880,7 +880,7 @@ select.custom-select::placeholder {
 .footer_section {
     width: 100%;
     float: left;
-    background-color: #252525;
+    background-color: #2d2a30;
     position: absolute;
     margin-top: -60px;
     z-index: 0;

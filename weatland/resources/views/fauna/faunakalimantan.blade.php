@@ -332,34 +332,11 @@
       <!-- client section end --> --}}
 
     <!-- footer section start -->
-    <div class="footer_section layout_padding footer_main">
-        <div class="container">
-            <div class="social_icon">
-                <ul>
-                    <li><a href="#"><img src="{{ asset('css/css_landing_page/images/fb-icon.png') }}"></a></li>
-                    <li><a href="#"><img src="{{ asset('css/css_landing_page/images/twitter-icon.png') }}"></a>
-                    </li>
-                    <li><a href="#"><img
-                                src="{{ asset('css/css_landing_page/images/linkedin-icon.png') }}"></a></li>
-                    <li><a href="#"><img
-                                src="{{ asset('css/css_landing_page/images/instagram-icon.png') }}"></a></li>
-                </ul>
-            </div>
-            <div class="location_section">
-                <ul>
-                    <li><a href="#"><img src="{{ asset('css/css_landing_page/images/mail-icon.png') }}"><span
-                                class="padding_left_15">demo@gmail.com</span></a></li>
-                    <li><a href="#"><img src="{{ asset('css/css_landing_page/images/call-icon.png') }}"><span
-                                class="padding_left_15">(+71 9876543210)</span></a></li>
-                    <li><a href="#"><img src="{{ asset('css/css_landing_page/images/map-icon.png') }}"><span
-                                class="padding_left_15">Location</span></a></li>
-                </ul>
-            </div>
-            <!-- copyright section start -->
-            <div class="copyright_section">
-            </div>
-            <!-- copyright section end -->
-        </div>
+    <div class="footer_section footer_main">
+
+        @extends('layout.footer')
+        @section('konten')
+        @endsection
         <!-- footer section end -->
         <!-- Javascript files-->
         <script src="{{ asset('css/css_landing_page/js/jquery.min.js') }}"></script>
