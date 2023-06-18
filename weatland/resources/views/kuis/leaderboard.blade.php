@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet" />
-
+    <title>Leaderboard | Wetland</title>
     <style>
         * {
             font-size: 62, 5%;
@@ -282,6 +282,18 @@
                                 {{ $item->skor }}
                             @endif
                         </td>
+                        <td>
+                            <form id="delete-form-{{ $item->id }}"
+                                action="{{ route('delete.user', ['id' => $item->id]) }}" method="POST"
+                                style="display: none;">
+                                @csrf
+                                @method('DELETE')
+                            </form>
+                            <a style="background-color: rgb(218, 75, 75); font-size: 20px; padding: 10px 20px; border-radius: 10px; text-decoration: none;"
+                                class="continue" href="{{ route('delete.user', ['id' => $item->id]) }}"
+                                onclick="event.preventDefault(); if (confirm('Apakah Anda yakin ingin menghapus pengguna ini?')) document.getElementById('delete-form-{{ $item->id }}').submit();">Hapus</a>
+                        </td>
+
                     </tr>
                 @endforeach
 

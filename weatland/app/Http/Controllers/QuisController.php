@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use PDF;
+use App\Models\User;
 use App\Models\MulaiKuis;
 use App\Models\Leaderboard;
 use Illuminate\Http\Request;
@@ -40,7 +41,13 @@ class QuisController extends Controller
         $items = Leaderboard::orderBy('skor', 'desc')->simplePaginate(7);
         return view('kuis.leaderboard', ['items' => $items]);
     }
+    public function deleteUser($id)
+    {
 
+        Leaderboard::destroy($id);
+
+        return redirect()->back()->with('success', 'Pengguna berhasil dihapus');
+    }
 
     public function exportPDF()
     {

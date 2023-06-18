@@ -112,6 +112,7 @@ Route::get('/kuis/startkuis', [QuisController::class, 'startkuis'])->name('start
 Route::post('/kuis/leaderboardinsert', [QuisController::class, 'store_leaderboard'])->name('store.leaderboard')->middleware('isLogin');
 
 Route::get('/kuis/leaderboard', [QuisController::class, 'viewleaderboard'])->name('leaderboard')->middleware('isLogin');
+Route::delete('/delete/user/{id}', [QuisController::class, 'deleteUser'])->name('delete.user');
 
 
 // export
